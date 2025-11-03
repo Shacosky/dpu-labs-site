@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "badge": "Ciberseguridad purple‑team • Automatización IA",
+    "title": "Automatización con seguridad primero para equipos de alto impacto",
+    "description": "DPU Labs SpA integra prácticas purple‑team con automatización IA, AWS cloud/DevOps, e integración de datos moderna. Entregamos resultados medibles en Perú y México.",
+    "whatsapp": "Hablar por WhatsApp",
+    "explore": "Explorar servicios"
+  },
+  "navbar": {
+    "services": "Servicios",
+    "cases": "Casos",
+    "stack": "Stack",
+    "contact": "Contacto"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales para empresas modernas"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Listo para asegurar y automatizar tus operaciones?"
+  },
+  "footer": {
+    "company": "DPU Labs SpA",
+    "rights": "Todos los derechos reservados."
+  }
+}
