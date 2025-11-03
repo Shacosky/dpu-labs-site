@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  @apply bg-neutral-950 text-neutral-100 antialiased;
+}
+
+/* Accessible focus styles */
+:focus-visible {
+  outline: 2px solid theme('colors.brand.500');
+  outline-offset: 2px;
+}
+
+/* Subtle noise/gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124, 58, 237, 0.25), transparent),
+              radial-gradient(1000px 500px at 10% -10%, rgba(91, 33, 182, 0.18), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-6;
+}
+
+.section-title {
+  @apply text-2xl sm:text-3xl font-semibold tracking-tight text-white;
+}
+
+.muted {
+  @apply text-neutral-400;
+}
+
