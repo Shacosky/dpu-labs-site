@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { I18nProvider } from '@/contexts/I18nContext';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dpulabs.site'),
+  metadataBase: new URL('https://dpulabs.is-a.dev'),
   title: {
     default: 'DPU Labs SpA — Purple-Team Cybersecurity, AI Automation, AWS Cloud',
     template: '%s • DPU Labs SpA',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    url: 'https://dpulabs.site',
+    url: 'https://dpulabs.is-a.dev',
     title: 'DPU Labs SpA — Purple-Team Cybersecurity, AI Automation, AWS Cloud',
     description:
       'Purple-team cybersecurity with AI automation, AWS cloud/DevOps, and modern data integration. Regional delivery: Peru & Mexico.',

@@ -13,15 +13,74 @@
     "contact": "Contacto"
   },
   "services": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Soluciones integrales para empresas modernas"
+    "title": "Servicios",
+    "subtitle": "Desde el diseño hasta la ejecución: automatización segura y plataformas cloud entregadas con estándares y contexto local en Perú y México.",
+    "items": {
+      "ai": {
+        "title": "Automatización IA",
+        "description": "Asistentes inteligentes, RAG seguro, orquestación de flujos y observabilidad para impacto real en el negocio."
+      },
+      "cloud": {
+        "title": "Cloud & DevOps (AWS)",
+        "description": "Cargas de trabajo Well‑Architected, IaC (Terraform), contenedores/serverless, CI/CD y FinOps en AWS."
+      },
+      "security": {
+        "title": "Ciberseguridad (Purple Team)",
+        "description": "La emulación de adversarios se une con la ingeniería de detección: reforzar, probar y mejorar la efectividad del SOC."
+      },
+      "data": {
+        "title": "Datos & Integración",
+        "description": "Pipelines event‑driven, APIs y patrones de integración que desbloquean analytics y automatización."
+      }
+    }
+  },
+  "cases": {
+    "title": "Casos Seleccionados",
+    "subtitle": "Entrega pragmática en diversos sectores. Adaptamos soluciones a regulaciones locales, riesgo y madurez del equipo.",
+    "items": {
+      "financial": {
+        "title": "Servicios financieros (Perú)",
+        "summary": "Integración de datos serverless en AWS con IaC y diseño event‑driven. 40% de reducción de costos y reportes más rápidos."
+      },
+      "ecommerce": {
+        "title": "E‑commerce (México)",
+        "summary": "Asistente LLM para triage de soporte con RAG seguro sobre datos de productos/FAQ. AHT bajó 32%, CSAT subió."
+      },
+      "telecom": {
+        "title": "Telecomunicaciones (LatAm)",
+        "summary": "Mejora en ingeniería de detección: emulación de adversarios, catálogo de casos de uso, y CI para detecciones."
+      }
+    }
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Tecnologías alineadas con estándares para entrega segura, observable y escalable."
   },
   "contact": {
-    "title": "Contáctanos",
-    "subtitle": "¿Listo para asegurar y automatizar tus operaciones?"
+    "title": "Conversemos",
+    "subtitle": "Chat rápido, sesión de scoping, o revisión de seguridad. Respondemos rápido.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "nombre@empresa.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "¿Qué quieres lograr?",
+      "submit": "Enviar por WhatsApp",
+      "openWhatsApp": "Abrir WhatsApp"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "phone": "+56 9 4286 7168",
+      "cta": "Chatear ahora",
+      "info1": "• Tiempo de respuesta: menos de 2 horas",
+      "info2": "• Idiomas: Español, Inglés",
+      "info3": "• Regiones: Perú, México, Remoto"
+    }
   },
   "footer": {
     "company": "DPU Labs SpA",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "regions": "Perú • México • Remoto LATAM"
   }
 }

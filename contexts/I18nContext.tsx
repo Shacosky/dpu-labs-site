@@ -15,13 +15,13 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>('en');
+  const [locale, setLocale] = useState<Locale>('es');
   const [translations, setTranslations] = useState<Translations>({});
 
   useEffect(() => {
     // Get locale from localStorage or browser
     const savedLocale = localStorage.getItem('locale') as Locale;
-    const browserLocale = navigator.language.startsWith('es') ? 'es' : 'en';
+    const browserLocale = navigator.language.startsWith('en') ? 'en' : 'es';
     const initialLocale = savedLocale || browserLocale;
     
     loadTranslations(initialLocale);

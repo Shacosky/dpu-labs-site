@@ -13,15 +13,74 @@
     "contact": "Contact"
   },
   "services": {
-    "title": "Our Services",
-    "subtitle": "Comprehensive solutions for modern enterprises"
+    "title": "Services",
+    "subtitle": "From design to run: secure automation and cloud platforms delivered to standards, with local context in Peru and Mexico.",
+    "items": {
+      "ai": {
+        "title": "AI Automation",
+        "description": "Intelligent assistants, secure RAG, workflow orchestration and observability for real business impact."
+      },
+      "cloud": {
+        "title": "Cloud & DevOps (AWS)",
+        "description": "Well‑Architected workloads, IaC (Terraform), containers/serverless, CI/CD and FinOps on AWS."
+      },
+      "security": {
+        "title": "Cybersecurity (Purple Team)",
+        "description": "Adversary emulation meets detection engineering: harden, test, and uplift SOC effectiveness."
+      },
+      "data": {
+        "title": "Data & Integration",
+        "description": "Event‑driven pipelines, APIs and integration patterns that unlock analytics and automation."
+      }
+    }
+  },
+  "cases": {
+    "title": "Selected Cases",
+    "subtitle": "Pragmatic delivery across sectors. We tailor solutions to local regulations, risk, and team maturity.",
+    "items": {
+      "financial": {
+        "title": "Financial services (Peru)",
+        "summary": "Serverless data integration on AWS with IaC and event‑driven design. 40% cost reduction and faster reporting."
+      },
+      "ecommerce": {
+        "title": "E‑commerce (Mexico)",
+        "summary": "LLM assistant for support triage with secure RAG over product/FAQ data. AHT down 32%, CSAT up."
+      },
+      "telecom": {
+        "title": "Telecom (LatAm)",
+        "summary": "Detection engineering uplift: adversary emulation, use‑case catalog, and CI for detections."
+      }
+    }
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Standards‑aligned technologies for secure, observable, and scalable delivery."
   },
   "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Ready to secure and automate your operations?"
+    "title": "Let's talk",
+    "subtitle": "Quick chat, scoping session, or security review. We respond fast.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "message": "Message",
+      "messagePlaceholder": "What do you want to achieve?",
+      "submit": "Send via WhatsApp",
+      "openWhatsApp": "Open WhatsApp"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "phone": "+56 9 4286 7168",
+      "cta": "Chat now",
+      "info1": "• Response time: under 2 hours",
+      "info2": "• Languages: Spanish, English",
+      "info3": "• Regions: Peru, Mexico, Remote"
+    }
   },
   "footer": {
     "company": "DPU Labs SpA",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "regions": "Peru • Mexico • Remote LATAM"
   }
 }
