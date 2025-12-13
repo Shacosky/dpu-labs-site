@@ -14,23 +14,31 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "From design to run: secure automation and cloud platforms delivered to standards, with local context in Peru and Mexico.",
+    "subtitle": "From idea to production: software engineering, digital transformation, advisory, cybersecurity, and continuous improvement with measurable impact.",
     "items": {
-      "ai": {
-        "title": "AI Automation",
-        "description": "Intelligent assistants, secure RAG, workflow orchestration and observability for real business impact."
+      "software": {
+        "title": "Software Engineering Process",
+        "description": "Discovery, architecture, CI/CD, automated testing, and flow metrics to ship without surprises."
       },
-      "cloud": {
-        "title": "Cloud & DevOps (AWS)",
-        "description": "Well‑Architected workloads, IaC (Terraform), containers/serverless, CI/CD and FinOps on AWS."
+      "transformation": {
+        "title": "Digital Transformation",
+        "description": "Actionable roadmaps, cloud modernization, and automation with change management so people actually adopt."
       },
-      "security": {
-        "title": "Cybersecurity (Purple Team)",
-        "description": "Adversary emulation meets detection engineering: harden, test, and uplift SOC effectiveness."
+      "advisory": {
+        "title": "Advisory",
+        "description": "Executive and technical mentoring, lean PMO, and hands-on training for teams that want to accelerate."
       },
-      "data": {
-        "title": "Data & Integration",
-        "description": "Event‑driven pipelines, APIs and integration patterns that unlock analytics and automation."
+      "cybersecurity": {
+        "title": "Enterprise & Personal Cybersecurity",
+        "description": "Assessments, hardening, protected identities and devices, and incident response with clear playbooks."
+      },
+      "kaizen": {
+        "title": "Continuous Improvement",
+        "description": "Kaizen without bureaucracy: flow visibility, digital andon, and frequent small wins."
+      },
+      "operations": {
+        "title": "Agile Operations",
+        "description": "Visible boards, short ceremonies, and cross-team coordination to ship with predictability."
       }
     }
   },

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useI18n } from '@/contexts/I18nContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { UserButton } from './UserButton';
 
 export function Navbar() {
   const { t } = useI18n();
@@ -29,6 +30,7 @@ export function Navbar() {
             ))}
           </nav>
           <LanguageSwitcher />
+          <UserButton />
           <div className="md:hidden text-neutral-400 text-sm">Menu</div>
         </div>
       </div>

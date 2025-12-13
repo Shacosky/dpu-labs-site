@@ -14,23 +14,31 @@
   },
   "services": {
     "title": "Servicios",
-    "subtitle": "Desde el diseño hasta la ejecución: automatización segura y plataformas cloud entregadas con estándares y contexto local en Perú y México.",
+    "subtitle": "De la idea a la operación: ingeniería de software, transformación digital, asesorías, ciberseguridad y mejora continua con impacto medible.",
     "items": {
-      "ai": {
-        "title": "Automatización IA",
-        "description": "Asistentes inteligentes, RAG seguro, orquestación de flujos y observabilidad para impacto real en el negocio."
+      "software": {
+        "title": "Proceso de Ingeniería de Software",
+        "description": "Discovery, arquitectura, CI/CD, QA automatizada y métricas de flujo para entregar sin sorpresas."
       },
-      "cloud": {
-        "title": "Cloud & DevOps (AWS)",
-        "description": "Cargas de trabajo Well‑Architected, IaC (Terraform), contenedores/serverless, CI/CD y FinOps en AWS."
+      "transformation": {
+        "title": "Transformación Digital",
+        "description": "Roadmaps accionables, modernización cloud y automatización con gestión del cambio para que la gente adopte."
       },
-      "security": {
-        "title": "Ciberseguridad (Purple Team)",
-        "description": "La emulación de adversarios se une con la ingeniería de detección: reforzar, probar y mejorar la efectividad del SOC."
+      "advisory": {
+        "title": "Asesorías",
+        "description": "Mentoría ejecutiva y técnica, PMO ligera y capacitación práctica para equipos que quieren acelerar."
       },
-      "data": {
-        "title": "Datos & Integración",
-        "description": "Pipelines event‑driven, APIs y patrones de integración que desbloquean analytics y automatización."
+      "cybersecurity": {
+        "title": "Ciberseguridad empresarial y personal",
+        "description": "Evaluaciones, hardening, identidad y dispositivos protegidos, y respuesta a incidentes con playbooks claros."
+      },
+      "kaizen": {
+        "title": "Mejora continua",
+        "description": "Mejora continua sin burocracia: visibilidad de flujo, andon digital y pequeños cambios frecuentes."
+      },
+      "operations": {
+        "title": "Operaciones ágiles",
+        "description": "Tableros visibles, ceremonias cortas y coordinación entre áreas para entregar con predictibilidad."
       }
     }
   },
