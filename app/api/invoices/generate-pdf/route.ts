@@ -100,7 +100,7 @@ export async function GET(request: NextRequest) {
 
     pdfDoc.end();
 
-    return new Promise((resolve) => {
+    return new Promise<Response>((resolve) => {
       pdfDoc.on('finish', () => {
         const pdfBuffer = Buffer.concat(buffers);
         resolve(

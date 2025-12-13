@@ -1,9 +1,10 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export default function ViewInvoicePage() {
+function ViewInvoiceContent() {
   const searchParams = useSearchParams();
   const invoiceId = searchParams.get('id');
   const [pdfUrl, setPdfUrl] = useState<string>('');
@@ -36,12 +37,22 @@ export default function ViewInvoicePage() {
       </div>
 
       <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-        <iframe
-          src={pdfUrl}
-          className="w-full h-screen rounded-lg"
-          title="Invoice PDF"
-        />
+        {pdfUrl && (
+          <iframe
+            src={pdfUrl}
+            className="w-full h-screen rounded-lg"
+            title="Invoice PDF"
+          />
+        )}
       </div>
     </div>
+  );
+}
+
+export default function ViewInvoicePage() {
+  return (
+    <Suspense fallback={<div className="py-16 text-center text-white">Cargando...</div>}>
+      <ViewInvoiceContent />
+    </Suspense>
   );
 }
