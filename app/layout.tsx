@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { I18nProvider } from '@/contexts/I18nContext';
 import { AuthProvider } from './providers';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dpulabs.is-a.dev'),
@@ -85,6 +86,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <SpeedInsights />
           </I18nProvider>
         </AuthProvider>
       </body>
