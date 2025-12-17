@@ -1,0 +1,110 @@
+DPU Labs — OSINT Starter Algorithm (v0.2)
+Date: 2025-12-16
+
+Goal
+- Build a safe, repeatable OSINT pipeline to collect public intelligence on a target, normalize it, enrich with external sources, and store encrypted.
+- Support natural language (NL) inputs to translate analyst intent into concrete discovery actions without requiring LLM APIs.
+
+Security & Compliance (Musts)
+- Only use public data or consented sources; never bypass access controls.
+- Validate legality per jurisdiction; log source and timestamp for each artifact.
+- Encrypt all stored artifacts (AES-256-GCM, already implemented server-side).
+- Rate limit and respect robots.txt/api terms wherever applicable.
+- No credentials collection; redact sensitive PII beyond scope.
+
+Data Model (Plaintext prior to encryption)
+- Target: name (required), aliases[], emails[], phones[], urls[], tags[], notes, sources[{name,url,type,collectedAt}]
+
+Pipeline Phases
+0) Natural Language Intent Parsing (Optional)
+   - Parse analyst prompt (Spanish/English) into structured intents
+   - Extract: target providers (LinkedIn/GitHub/Twitter/etc), discovery actions (emails/phones/profiles/urls), tags, notes
+   - Generate search dorks as analyst aids (no auto-scraping)
+   - Implementation: lib/osint/nl.ts → parseOsintNL(), buildFromNL()
+
+1) Seed
+   - Input: target name (and optional seed email/username/url OR natural language prompt)
+   - Normalize name; create canonical `nameHash` (sha256(lowercase))
+   - Apply NL intents if provided
+
+2) Discovery
+   - Person/Company lookup: web search (query operators), social handles, domain probes
+   - Email discovery: pattern-based (first.last@domain), public leaks check (only metadata, no breach content)
+   - URL harvest: homepage + known profiles (LinkedIn/Twitter/GitHub), company registries
+
+3) Enrichment
+   - Resolve URLs to canonical forms; fetch titles/metadata
+   - Validate emails (syntax, MX check optional); deduplicate
+   - Phones normalization to E.164 when possible
+   - Tagging: persona/company/tech-stack/location
+
+4) Evidence
+   - Store minimal artifacts: resolved URLs, headlines, timestamps, source attribution
+   - Notes: analysis summary without credentials or secrets
+
+5) Persistence (Encrypted)
+   - Push updates via API: POST/PUT /api/osint
+   - Server encrypts fields; JSON responses show decrypted back to authenticated user
+
+6) Visualization
+   - Render diagram: center node (name), radial nodes (emails/urls/phones/aliases/tags)
+   - Provide detail panes and export endpoints
+
+Initial Pseudocode (Node/TypeScript, concept)
+
+// Option A: Manual creation
+function runOsintSeed(name: string) {
+  const target = { name, aliases: [], emails: [], phones: [], urls: [], tags: [], notes: '', sources: [] };
+  // Phase 1: seed
+  target.tags.push('seed');
+
+  // Phase 2: discovery (stubs)
+  const discoveredUrls = discoverUrls(name);
+  const discoveredAliases = discoverAliases(name);
+  const discoveredEmails = inferEmailsFromDomains(discoveredUrls);
+
+  // Phase 3: enrichment
+  const urls = normalizeUrls(discoveredUrls);
+  const emails = dedupe(validateEmails(discoveredEmails));
+  const aliases = dedupe(discoveredAliases);
+
+  // Phase 4: evidence
+  const sources = buildSources(urls);
+
+  // Phase 5: persistence (encrypted server-side)
+  api.post('/api/osint', { name, aliases, emails, urls, tags: target.tags, sources });
+
+  // Phase 6: visualization handled by dashboard
+}
+
+// Option B: Natural Language creation
+function runOsintFromNL(name: string, targetType: 'person' | 'company', nlPrompt: string) {
+  // Phase 0: parse natural language
+  const { payload, meta } = buildFromNL(name, targetType, nlPrompt);
+  // Example nlPrompt: "busca perfiles en linkedin y github, intenta correos y agrega tag fintech"
+  
+  // Phases 1-4 handled internally by buildFromNL
+  // Phase 5: persistence (encrypted server-side)
+  api.post('/api/osint', payload);
+  
+  // Optional: log generated dorks for analyst
+  if (meta.dorks?.length) console.info('Search dorks:', meta.dorks);
+  
+  // Phase 6: visualization handled by dashboard
+}
+
+// Stubs (replace with real implementations respecting rate limits and terms)
+function discoverUrls(name) { return [`https://linkedin.com/in/${slug(name)}`, `https://twitter.com/${slug(name)}`]; }
+function discoverAliases(name) { return [name, name.split(' ')[0]]; }
+function inferEmailsFromDomains(urls) { return ['name@example.com']; }
+function normalizeUrls(urls) { return urls.map(canonicalizeUrl); }
+function validateEmails(emails) { return emails.filter(isValidEmailSyntax); }
+function dedupe(list) { return Array.from(new Set(list)); }
+function buildSources(urls) { return urls.map(u => ({ name: 'web-profile', url: u, type: 'profile', collectedAt: new Date().toISOString() })); }
+
+Next Steps (Roadmap)
+- Implement discovery modules with configurable providers (search APIs, company registries)
+- Add MX/DNS checks for email validation (opt-in)
+- Introduce geotagging and time-based analysis
+- Export: secure JSON/CSV with redactions
+- Key rotation procedures for encryption keys

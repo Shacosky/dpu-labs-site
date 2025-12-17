@@ -27,6 +27,7 @@ async function dbConnect(): Promise<Mongoose> {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 10000, // fail fast if cluster not reachable
     };
 
     cached.promise = mongoose.connect(MONGODB_URI!, opts);

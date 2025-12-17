@@ -1,8 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { WhatsAppButton } from './WhatsAppButton';
+import dynamic from 'next/dynamic';
 import { useI18n } from '@/contexts/I18nContext';
+
+// Lazy load WhatsAppButton (no crítico para FCP/LCP)
+const WhatsAppButton = dynamic(() => import('./WhatsAppButton').then(m => ({ default: m.WhatsAppButton })), {
+  ssr: false,
+  loading: () => (
+    <div className="inline-flex items-center justify-center rounded-md bg-brand-500/20 text-white px-5 py-3 text-base animate-pulse">
+      Cargando...
+    </div>
+  ),
+});
 
 export function Hero() {
   const { t } = useI18n();

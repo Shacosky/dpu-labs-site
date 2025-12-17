@@ -47,3 +47,27 @@ export const ClientSchema = z.object({
 });
 
 export type Client = z.infer<typeof ClientSchema>;
+
+// OSINT Target Validation Schema (plaintext input)
+export const OsintTargetSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(300),
+  aliases: z.array(z.string().max(300)).optional(),
+  emails: z.array(z.string().email()).optional(),
+  targetType: z.enum(['person', 'company']),
+  phones: z.array(z.string().max(50)).optional(),
+  urls: z.array(z.string().url()).optional(),
+  tags: z.array(z.string().max(50)).optional(),
+  notes: z.string().max(5000).optional(),
+  sources: z
+    .array(
+      z.object({
+        name: z.string().max(200),
+        url: z.string().url().optional(),
+        type: z.string().max(100).optional(),
+        collectedAt: z.string().optional(),
+      })
+    )
+    .optional(),
+});
+
+export type OsintTargetInput = z.infer<typeof OsintTargetSchema>;

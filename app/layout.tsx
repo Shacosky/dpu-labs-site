@@ -5,6 +5,8 @@ import { Footer } from '@/components/Footer';
 import { I18nProvider } from '@/contexts/I18nContext';
 import { AuthProvider } from './providers';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ToastProvider } from '@/contexts/ToastContext';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dpulabs.is-a.dev'),
@@ -73,22 +75,26 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        <AuthProvider>
-          <I18nProvider>
-            <a
-              href="#content"
-              className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-neutral-900 focus:text-white focus:px-3 focus:py-2 focus:rounded-md"
-            >
-              Skip to content
-            </a>
-            <Navbar />
-            <main id="content" className="container">
-              {children}
-            </main>
-            <Footer />
-            <SpeedInsights />
-          </I18nProvider>
-        </AuthProvider>
+        <ErrorBoundary>
+          <AuthProvider>
+            <ToastProvider>
+              <I18nProvider>
+                <a
+                  href="#content"
+                  className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-neutral-900 focus:text-white focus:px-3 focus:py-2 focus:rounded-md"
+                >
+                  Skip to content
+                </a>
+                <Navbar />
+                <main id="content" className="container">
+                  {children}
+                </main>
+                <Footer />
+                <SpeedInsights />
+              </I18nProvider>
+            </ToastProvider>
+          </AuthProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );
