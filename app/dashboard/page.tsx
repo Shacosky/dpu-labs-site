@@ -63,6 +63,28 @@ export default async function DashboardPage() {
             Abrir WhatsApp
           </a>
         </div>
+
+        {/* Card 5: OSINT */}
+        <a href="/dashboard/osint" className="rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-colors">
+          <h2 className="text-xl font-semibold text-white mb-2">OSINT</h2>
+          <p className="text-sm text-neutral-300 mb-4">
+            Gestiona objetivos OSINT con cifrado de datos
+          </p>
+          <div className="text-sm text-brand-400 hover:text-brand-300">
+            Ir a OSINT →
+          </div>
+        </a>
+
+        {/* Card 6: Errores del Sistema */}
+        <a href="/dashboard/errors" className="rounded-xl border border-red-500/10 bg-red-500/5 p-6 hover:bg-red-500/10 transition-colors">
+          <h2 className="text-xl font-semibold text-white mb-2">Errores</h2>
+          <p className="text-sm text-neutral-300 mb-4">
+            Monitorea errores del sistema
+          </p>
+          <div className="text-sm text-red-400 hover:text-red-300">
+            Ver Errores →
+          </div>
+        </a>
       </div>
 
       {/* Información del usuario */}

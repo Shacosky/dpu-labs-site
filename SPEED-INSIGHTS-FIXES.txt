@@ -1,0 +1,169 @@
+SPEED INSIGHTS - Plan de Optimización
+Fecha: 16 diciembre 2025
+Real Experience Score: 65 (Needs Improvement)
+
+=====================================
+PROBLEMAS DETECTADOS
+=====================================
+
+1. INP (Interaction to Next Paint): 1,408 ms ❌
+   - Ideal: <200 ms
+   - Causa: Scripts bloqueantes, componentes pesados sin lazy loading
+
+2. TTFB (Time to First Byte): 1.87 s ❌
+   - Ideal: <600 ms
+   - Causa: Server response lento, posibles queries DB pesadas
+
+3. FCP (First Contentful Paint): 2.43 s ⚠️
+   - Ideal: <1.8 s
+   - Causa: Imágenes sin optimizar, recursos bloqueantes
+
+4. LCP (Largest Contentful Paint): 2.43 s ⚠️
+   - Ideal: <2.5 s
+   - Causa: Imágenes hero sin prioridad, no optimizadas
+
+5. CLS (Cumulative Layout Shift): 0.04 ✅
+   - Estado: GOOD
+
+=====================================
+SOLUCIONES (Orden de prioridad)
+=====================================
+
+🔧 FASE 1: Optimización de Imágenes (Impacto: ALTO)
+--------------------------------------------------
+□ Convertir todos los <img> a <Image> de Next.js
+  Archivos a revisar:
+  - components/Hero.tsx
+  - components/Services.tsx
+  - components/Cases.tsx
+  - components/Stack.tsx
+  - app/opengraph-image.tsx
+  - app/icon.tsx
+
+  Antes:
+    <img src="/hero.png" alt="Hero" />
+  
+  Después:
+    import Image from 'next/image';
+    <Image src="/hero.png" alt="Hero" width={1200} height={600} priority />
+
+□ Agregar priority a imagen hero (above the fold)
+□ Usar placeholder="blur" en imágenes grandes
+□ Configurar deviceSizes y imageSizes en next.config.ts:
+  
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/webp', 'image/avif'],
+  }
+
+🔧 FASE 2: Lazy Loading de Componentes (Impacto: ALTO)
+------------------------------------------------------
+□ Navbar: Diferir menú mobile hasta interacción
+  
+  import dynamic from 'next/dynamic';
+  const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false });
+
+□ WhatsAppButton: Cargar solo cuando visible
+  
+  const WhatsAppButton = dynamic(() => import('./WhatsAppButton'), { 
+    ssr: false,
+    loading: () => null 
+  });
+
+□ OsintDiagram: Ya es pesado, cargar bajo demanda
+  
+  const OsintDiagram = dynamic(() => import('./OsintDiagram').then(m => ({ default: m.OsintDiagram })), {
+    loading: () => <div className="animate-pulse">Cargando diagrama...</div>
+  });
+
+🔧 FASE 3: Scripts de Terceros (Impacto: MEDIO)
+-----------------------------------------------
+□ Clerk: Ya está optimizado
+□ Vercel Speed Insights: Mover a <body> final (ya está)
+□ Revisar si hay analytics adicionales y diferirlos:
+  
+  <script src="..." defer />
+
+🔧 FASE 4: Server-Side Optimization (Impacto: MEDIO)
+----------------------------------------------------
+□ Habilitar caching estático para rutas públicas
+  
+  // app/page.tsx (home)
+  export const revalidate = 3600; // 1 hora
+
+□ Optimizar queries MongoDB:
+  - Agregar índices en campos frecuentes
+  - Limitar resultados con .limit()
+  - Proyectar solo campos necesarios
+
+□ Revisar middleware.ts:
+  - Verificar que no haga operaciones pesadas
+  - Considerar edge runtime para rutas públicas
+
+🔧 FASE 5: Bundle Size (Impacto: BAJO-MEDIO)
+--------------------------------------------
+□ Analizar bundle: npm run build
+□ Revisar dependencias grandes:
+  
+  npm list --depth=0 | grep -i large
+
+□ Considerar code splitting manual en rutas pesadas:
+  
+  // app/dashboard/osint/page.tsx
+  export const dynamic = 'force-dynamic';
+
+🔧 FASE 6: CSS/JS Optimization (Impacto: BAJO)
+----------------------------------------------
+□ Tailwind: Ya está optimizado con JIT
+□ Verificar que no haya CSS duplicado
+□ Minificar manual si es necesario (Next lo hace automático)
+
+=====================================
+QUICK WINS (Hacer primero)
+=====================================
+
+1. Agregar priority a imagen hero (5 min)
+2. Convertir Hero.tsx a usar next/image (10 min)
+3. Lazy load WhatsAppButton (5 min)
+4. Agregar revalidate a home page (2 min)
+
+Impacto esperado: RES de 65 → 80+ (Good)
+
+=====================================
+COMANDOS ÚTILES
+=====================================
+
+# Ver bundle size
+npm run build
+
+# Analizar con webpack-bundle-analyzer
+npm install -D @next/bundle-analyzer
+# Agregar a next.config.ts y correr:
+ANALYZE=true npm run build
+
+# Test local performance
+npm run build && npm run start
+# Usar Lighthouse en Chrome DevTools
+
+=====================================
+MÉTRICAS OBJETIVO
+=====================================
+
+Después de optimizaciones:
+- RES: >90 (Great)
+- INP: <200 ms
+- TTFB: <600 ms
+- FCP: <1.8 s
+- LCP: <2.5 s
+- CLS: <0.1 (ya está bien)
+
+=====================================
+SEGUIMIENTO
+=====================================
+
+Semana 1: Fases 1-2 (imágenes + lazy loading)
+Semana 2: Fases 3-4 (scripts + server)
+Semana 3: Fase 5-6 (bundle + css)
+
+Validar en Speed Insights cada semana después de deploy.

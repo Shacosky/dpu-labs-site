@@ -14,7 +14,7 @@
 | **Vulnerabilidades NPM** | ✅ 0 | `npm audit` - Sin problemas |
 | **Dependencias** | ✅ Actualizadas | Next.js 15.5.9 (última versión segura) |
 | **Autenticación** | ✅ Implementada | Clerk + Middleware |
-| **Base de Datos** | ✅ Protegida | MongoDB con validación de esquemas |
+| **Base de Datos** | ✅ Protegida | MongoDB con validación + cifrado app-level |
 | **Variables de Entorno** | ⚠️ Revisar | Credenciales en `.env.local` |
 | **HTTPS/CORS** | ✅ Configurado | Middleware protege rutas |
 
@@ -73,6 +73,12 @@ amount: { type: Number, required: true }
 - `GET /api/invoices/generate-pdf` - Requiere autenticación ✅
 - `GET /api/expenses` - Requiere autenticación ✅
 - `POST /api/expenses` - Requiere autenticación ✅
+ - `GET /api/osint` - Requiere autenticación ✅ (cifrado extremo a BD)
+ - `POST /api/osint` - Requiere autenticación ✅ (cifrado extremo a BD)
+ - `GET /api/osint/[id]` - Requiere autenticación ✅
+ - `PUT /api/osint/[id]` - Requiere autenticación ✅
+ - `DELETE /api/osint/[id]` - Requiere autenticación ✅
+   - Filtro por tipo de objetivo: `GET /api/osint?targetType=person|company`
 
 **Validaciones:**
 ```typescript
@@ -83,9 +89,33 @@ tax: parseFloat(formData.tax)
 ```
 
 **Falta Implementar:**
-- ⚠️ Rate limiting
-- ⚠️ CORS headers personalizados
-- ⚠️ Validación de entrada con Zod/Yup
+- ⚠️ CORS headers personalizados (si se expone fuera del dominio)
+
+**Implementado:**
+- ✅ Rate limiting simple (in-memory) en `lib/rateLimit.ts`
+- ✅ Validación de entrada con `zod` en `lib/validations.ts`
+
+---
+
+### 3.1 **OSINT: Cifrado de Datos en Reposo**
+**Estado:** ✅ **SEGURO**
+
+**Modelo de Amenazas:**
+- Datos sensibles (emails, teléfonos, URLs, notas, fuentes, alias, nombre) se almacenan cifrados a nivel aplicación.
+- Se utiliza `AES-256-GCM` con IV aleatorio y tag de autenticación.
+- Clave en `OSINT_ENCRYPTION_KEY` (Base64, 32 bytes). Opcional: `OSINT_ENCRYPTION_KEY_PREVIOUS` para rotación.
+
+**Detalles Técnicos:**
+- Helper en `lib/crypto.ts` (`encryptString`/`decryptString`, `sha256Hex`).
+- Esquema `OsintTarget` en `lib/models/OsintTarget.ts` con campos `*Enc` (iv, tag, ct, alg, kver).
+- Clasificación obligatoria de objetivos: `targetType` (`person` | `company`), útil para segmentación y políticas.
+- Restricción por usuario (`ownerId`) y `nameHash` único por usuario.
+- Respuestas API devuelven datos descifrados solo a usuarios autenticados.
+
+**Buenas Prácticas Aplicadas:**
+- No se registran datos sensibles en logs.
+- Deduplicación segura con `nameHash` (SHA-256 en minúsculas).
+- Límite de solicitudes por IP (rate limiting) y protección de rutas con Clerk.
 
 ---
 
