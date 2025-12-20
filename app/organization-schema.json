@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DPU Labs SpA",
+  "legalName": "DPU Labs Sociedad por Acciones",
+  "url": "https://dpulabs.is-a.dev",
+  "logo": "https://dpulabs.is-a.dev/icon.png",
+  "foundingDate": "2024",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "DPU Labs Team"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rancagua",
+    "addressRegion": "Región del Libertador General Bernardo O'Higgins",
+    "addressCountry": "CL"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    {
+      "@type": "Country",
+      "name": "Perú"
+    },
+    {
+      "@type": "Country",
+      "name": "México"
+    },
+    {
+      "@type": "GeoCircle",
+      "name": "América Latina"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+56-9-4286-7168",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish", "English"]
+  },
+  "sameAs": [
+    "https://wa.me/56942867168"
+  ],
+  "description": "DPU Labs SpA: ciberseguridad purple-team, automatización impulsada por IA, AWS cloud/DevOps, e integración de datos moderna. Entregamos en Perú, México y toda LATAM.",
+  "knowsAbout": [
+    "Cybersecurity",
+    "Purple Team Security",
+    "AI Automation",
+    "AWS Cloud Computing",
+    "DevOps",
+    "Software Development",
+    "Digital Transformation",
+    "Data Integration",
+    "CI/CD",
+    "Continuous Improvement"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Proceso de Ingeniería de Software",
+        "description": "Discovery, arquitectura, CI/CD, QA automatizada y métricas de flujo para entregar sin sorpresas."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Transformación Digital",
+        "description": "Roadmaps accionables, modernización cloud y automatización con gestión del cambio."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Ciberseguridad Empresarial y Personal",
+        "description": "Evaluaciones, hardening, identidad y dispositivos protegidos, y respuesta a incidentes."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Mejora Continua (Kaizen)",
+        "description": "Visibilidad de flujo, andon digital y pequeños cambios frecuentes sin burocracia."
+      }
+    }
+  ]
+}

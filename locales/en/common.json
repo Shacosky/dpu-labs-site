@@ -4,7 +4,17 @@
     "title": "Security‑first automation for high‑impact teams",
     "description": "DPU Labs SpA integrates purple‑team practices with AI automation, AWS cloud/DevOps, and modern data integration. We deliver measurable outcomes across Peru and Mexico.",
     "whatsapp": "Talk on WhatsApp",
-    "explore": "Explore services"
+    "explore": "Explore services",
+    "slide2": {
+      "badge": "Digital Transformation • Cloud Native",
+      "title": "Modernize your infrastructure with world-class technology",
+      "description": "AWS migration, serverless architectures, and DevOps that actually works. Trained teams and resilient systems."
+    },
+    "slide3": {
+      "badge": "Measurable Results • LATAM",
+      "title": "Proven delivery across Peru, Mexico, and Chile",
+      "description": "Over 40% reduction in operational costs. Empowered teams. Satisfied clients in financial, retail, and telecom sectors."
+    }
   },
   "navbar": {
     "services": "Services",
@@ -15,30 +25,76 @@
   "services": {
     "title": "Services",
     "subtitle": "From idea to production: software engineering, digital transformation, advisory, cybersecurity, and continuous improvement with measurable impact.",
+    "modal": {
+      "features": "Key features",
+      "cta": "Inquire about this service"
+    },
     "items": {
       "software": {
         "title": "Software Engineering Process",
-        "description": "Discovery, architecture, CI/CD, automated testing, and flow metrics to ship without surprises."
+        "description": "Discovery, architecture, CI/CD, automated testing, and flow metrics to ship without surprises.",
+        "fullDescription": "We build software that scales and lasts. Our approach integrates deep discovery, solid architecture, automated CI/CD pipelines, exhaustive testing, and flow metrics that give you real visibility into progress. No accumulated technical debt, no last-minute surprises.",
+        "features": {
+          "1": "Collaborative discovery with technical and business stakeholders",
+          "2": "Cloud-native architecture with AWS, Kubernetes, and Terraform",
+          "3": "Automated CI/CD with GitHub Actions, testing, and continuous deployment",
+          "4": "Flow metrics: lead time, cycle time, deployment frequency"
+        }
       },
       "transformation": {
         "title": "Digital Transformation",
-        "description": "Actionable roadmaps, cloud modernization, and automation with change management so people actually adopt."
+        "description": "Actionable roadmaps, cloud modernization, and automation with change management so people actually adopt.",
+        "fullDescription": "We don't sell PowerPoints. We create executable roadmaps, migrate legacy systems to the cloud, automate manual processes, and train your team to actually adopt new tools. Transformation with tangible results.",
+        "features": {
+          "1": "Technical and organizational assessment with prioritized recommendations",
+          "2": "Progressive cloud migration with serverless and container architectures",
+          "3": "Process automation with AI and RPA for repetitive tasks",
+          "4": "Change management: training, documentation, and measured adoption"
+        }
       },
       "advisory": {
         "title": "Advisory",
-        "description": "Executive and technical mentoring, lean PMO, and hands-on training for teams that want to accelerate."
+        "description": "Executive and technical mentoring, lean PMO, and hands-on training for teams that want to accelerate.",
+        "fullDescription": "Mentorship for CTOs, VPs of Engineering, and technical leaders. Lean PMO that accelerates, not slows down. Hands-on training in modern technologies. We help teams level up without eternal consultants.",
+        "features": {
+          "1": "1:1 mentoring for technical leaders and technology executives",
+          "2": "Agile PMO: metrics, rituals, and visibility without bureaucracy",
+          "3": "Technical training in AWS, DevOps, security, and architecture",
+          "4": "Architecture and code review with actionable recommendations"
+        }
       },
       "cybersecurity": {
         "title": "Enterprise & Personal Cybersecurity",
-        "description": "Assessments, hardening, protected identities and devices, and incident response with clear playbooks."
+        "description": "Assessments, hardening, protected identities and devices, and incident response with clear playbooks.",
+        "fullDescription": "Purple-team security: we think like attackers, defend like experts. Vulnerability assessments, system hardening, identity management, corporate and personal device protection, and incident response with proven playbooks.",
+        "features": {
+          "1": "Security assessments with OWASP and NIST methodology",
+          "2": "Infrastructure hardening: AWS, servers, and applications",
+          "3": "Identity management: SSO, MFA, Zero Trust Architecture",
+          "4": "24/7 incident response with playbooks and trained teams"
+        }
       },
       "kaizen": {
         "title": "Continuous Improvement",
-        "description": "Kaizen without bureaucracy: flow visibility, digital andon, and frequent small wins."
+        "description": "Kaizen without bureaucracy: flow visibility, digital andon, and frequent small wins.",
+        "fullDescription": "Digital Kaizen without heavy processes. Visual boards showing real flow, automatic alerts when something gets stuck (andon), retrospectives that generate concrete changes. Small frequent improvements that add up big.",
+        "features": {
+          "1": "Visual flow boards with real-time metrics",
+          "2": "Digital andon system: automatic alerts for blockers",
+          "3": "Effective retrospectives with measurable actions and follow-up",
+          "4": "Experimentation culture: A/B testing and feature flags"
+        }
       },
       "operations": {
         "title": "Agile Operations",
-        "description": "Visible boards, short ceremonies, and cross-team coordination to ship with predictability."
+        "description": "Visible boards, short ceremonies, and cross-team coordination to ship with predictability.",
+        "fullDescription": "Operations that flow: Kanban boards everyone understands, 10-minute stand-ups, frictionless cross-team coordination. We ship with predictability because we measure, visualize, and continuously improve.",
+        "features": {
+          "1": "Shared Kanban boards with cross-functional visibility",
+          "2": "Optimized agile ceremonies: 10-min daily, 45-min retros",
+          "3": "Cross-team coordination with dependency boards",
+          "4": "Measured predictability: throughput, cycle time, SLA tracking"
+        }
       }
     }
   },
@@ -89,6 +145,9 @@
   "footer": {
     "company": "DPU Labs SpA",
     "rights": "All rights reserved.",
-    "regions": "Peru • Mexico • Remote LATAM"
+    "regions": "Peru • Mexico • Remote LATAM",
+    "tagline": "Experts in software development, cybersecurity and digital transformation.",
+    "navigation": "Navigation",
+    "contact": "Contact"
   }
 }

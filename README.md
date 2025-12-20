@@ -1,3 +1,21 @@
+# DPU Labs Site
+## PR Automation (develop → main)
+- **Prerequisites:** Install Git, install GitHub CLI (`gh`), authenticate with `gh auth login`, ensure `origin` points to your GitHub repo, and that branches `develop` and `main` exist.
+- **One-command run:**
+
+```powershell
+npm run pr:develop
+```
+
+- **What it does:** Pushes `develop`, creates a PR to `main` (with title/body), merges it (squash by default), checks out `main`, and pulls latest.
+- **Manual run (custom flags):**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/auto-pr.ps1 -From develop -To main -Title "Deploy: develop → main" -Body "Automated PR via script" -Squash
+```
+
+- **Notes:** If branch protections require approvals or passing checks, `gh pr merge` will fail until those conditions are met. Use `-NoDeleteBranch` to keep `develop` after merge, and set `-CommitMessage "msg"` to auto-commit staged changes before pushing.
+
 ## DPU Labs SpA — Sitio Web (Next.js 15 + TS + Tailwind)
 
 - App Router, TypeScript, Tailwind CSS
