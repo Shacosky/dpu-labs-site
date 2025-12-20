@@ -4,7 +4,17 @@
     "title": "Automatización con seguridad primero para equipos de alto impacto",
     "description": "DPU Labs SpA integra prácticas purple‑team con automatización IA, AWS cloud/DevOps, e integración de datos moderna. Entregamos resultados medibles en Perú y México.",
     "whatsapp": "Hablar por WhatsApp",
-    "explore": "Explorar servicios"
+    "explore": "Explorar servicios",
+    "slide2": {
+      "badge": "Transformación Digital • Cloud Native",
+      "title": "Moderniza tu infraestructura con tecnología de clase mundial",
+      "description": "Migración a AWS, arquitecturas serverless, y DevOps que realmente funcionan. Equipos capacitados y sistemas resilientes."
+    },
+    "slide3": {
+      "badge": "Resultados Medibles • LATAM",
+      "title": "Entrega comprobada en Perú, México y Chile",
+      "description": "Más de 40% de reducción de costos operativos. Equipos empoderados. Clientes satisfechos en sectores financiero, retail y telecom."
+    }
   },
   "navbar": {
     "services": "Servicios",
@@ -15,30 +25,76 @@
   "services": {
     "title": "Servicios",
     "subtitle": "De la idea a la operación: ingeniería de software, transformación digital, asesorías, ciberseguridad y mejora continua con impacto medible.",
+    "modal": {
+      "features": "Características principales",
+      "cta": "Consultar este servicio"
+    },
     "items": {
       "software": {
         "title": "Proceso de Ingeniería de Software",
-        "description": "Discovery, arquitectura, CI/CD, QA automatizada y métricas de flujo para entregar sin sorpresas."
+        "description": "Discovery, arquitectura, CI/CD, QA automatizada y métricas de flujo para entregar sin sorpresas.",
+        "fullDescription": "Construimos software que escala y dura. Nuestro enfoque integra discovery profundo, arquitectura sólida, pipelines de CI/CD automatizados, testing exhaustivo y métricas de flujo que te dan visibilidad real del progreso. Sin deuda técnica acumulada, sin sorpresas de último minuto.",
+        "features": {
+          "1": "Discovery colaborativo con stakeholders técnicos y de negocio",
+          "2": "Arquitectura cloud-native con AWS, Kubernetes y Terraform",
+          "3": "CI/CD automatizado con GitHub Actions, testing y despliegue continuo",
+          "4": "Métricas de flujo: lead time, cycle time, deployment frequency"
+        }
       },
       "transformation": {
         "title": "Transformación Digital",
-        "description": "Roadmaps accionables, modernización cloud y automatización con gestión del cambio para que la gente adopte."
+        "description": "Roadmaps accionables, modernización cloud y automatización con gestión del cambio para que la gente adopte.",
+        "fullDescription": "No vendemos PPTs. Creamos roadmaps ejecutables, migramos sistemas legacy a la nube, automatizamos procesos manuales y capacitamos a tu equipo para que realmente adopten las nuevas herramientas. Transformación con resultados tangibles.",
+        "features": {
+          "1": "Assessment técnico y organizacional con recomendaciones priorizadas",
+          "2": "Migración cloud progresiva con arquitecturas serverless y contenedores",
+          "3": "Automatización de procesos repetitivos con IA y RPA",
+          "4": "Change management: capacitación, documentación y adopción medida"
+        }
       },
       "advisory": {
         "title": "Asesorías",
-        "description": "Mentoría ejecutiva y técnica, PMO ligera y capacitación práctica para equipos que quieren acelerar."
+        "description": "Mentoría ejecutiva y técnica, PMO ligera y capacitación práctica para equipos que quieren acelerar.",
+        "fullDescription": "Mentoría para CTOs, VPs de Ingeniería y líderes técnicos. PMO ligera que no frena, sino que acelera. Capacitación hands-on en tecnologías modernas. Ayudamos a equipos a subir de nivel sin consultores eternos.",
+        "features": {
+          "1": "Mentoría 1:1 para líderes técnicos y ejecutivos de tecnología",
+          "2": "PMO ágil: métricas, rituales y visibilidad sin burocracia",
+          "3": "Capacitación técnica en AWS, DevOps, seguridad y arquitectura",
+          "4": "Revisión de arquitectura y código con recomendaciones accionables"
+        }
       },
       "cybersecurity": {
         "title": "Ciberseguridad empresarial y personal",
-        "description": "Evaluaciones, hardening, identidad y dispositivos protegidos, y respuesta a incidentes con playbooks claros."
+        "description": "Evaluaciones, hardening, identidad y dispositivos protegidos, y respuesta a incidentes con playbooks claros.",
+        "fullDescription": "Seguridad purple-team: pensamos como atacantes, defendemos como expertos. Evaluaciones de vulnerabilidades, hardening de sistemas, gestión de identidad, protección de dispositivos corporativos y personales, y respuesta a incidentes con playbooks probados.",
+        "features": {
+          "1": "Evaluaciones de seguridad con metodología OWASP y NIST",
+          "2": "Hardening de infraestructura AWS, servidores y aplicaciones",
+          "3": "Gestión de identidad: SSO, MFA, Zero Trust Architecture",
+          "4": "Respuesta a incidentes 24/7 con playbooks y equipos capacitados"
+        }
       },
       "kaizen": {
         "title": "Mejora continua",
-        "description": "Mejora continua sin burocracia: visibilidad de flujo, andon digital y pequeños cambios frecuentes."
+        "description": "Mejora continua sin burocracia: visibilidad de flujo, andon digital y pequeños cambios frecuentes.",
+        "fullDescription": "Kaizen digital sin el peso de procesos pesados. Tableros visuales que muestran el flujo real, alertas automáticas cuando algo se atasca (andon), retrospectivas que generan cambios concretos. Pequeñas mejoras frecuentes que suman grande.",
+        "features": {
+          "1": "Tableros de flujo visuales con métricas en tiempo real",
+          "2": "Sistema andon digital: alertas automáticas de bloqueos",
+          "3": "Retrospectivas efectivas con acciones medibles y seguimiento",
+          "4": "Cultura de experimentación: A/B testing y feature flags"
+        }
       },
       "operations": {
         "title": "Operaciones ágiles",
-        "description": "Tableros visibles, ceremonias cortas y coordinación entre áreas para entregar con predictibilidad."
+        "description": "Tableros visibles, ceremonias cortas y coordinación entre áreas para entregar con predictibilidad.",
+        "fullDescription": "Operaciones que fluyen: tableros Kanban que todos entienden, stand-ups de 10 minutos, coordinación entre equipos sin fricción. Entregamos con predictibilidad porque medimos, visualizamos y mejoramos continuamente.",
+        "features": {
+          "1": "Tableros Kanban compartidos con visibilidad cross-funcional",
+          "2": "Ceremonias ágiles optimizadas: daily de 10 min, retros de 45 min",
+          "3": "Coordinación entre equipos con dependency boards",
+          "4": "Predictibilidad medida: throughput, cycle time, SLA tracking"
+        }
       }
     }
   },
@@ -89,6 +145,9 @@
   "footer": {
     "company": "DPU Labs SpA",
     "rights": "Todos los derechos reservados.",
-    "regions": "Perú • México • Remoto LATAM"
+    "regions": "Perú • México • Remoto LATAM",
+    "tagline": "Expertos en desarrollo de software, ciberseguridad y transformación digital.",
+    "navigation": "Navegación",
+    "contact": "Contacto"
   }
 }

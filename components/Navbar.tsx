@@ -1,12 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { useI18n } from '@/contexts/I18nContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { UserButton } from './UserButton';
 
 export function Navbar() {
   const { t } = useI18n();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const nav = [
     { href: '#services', label: t('navbar.services') },
@@ -14,26 +16,69 @@ export function Navbar() {
     { href: '#stack', label: t('navbar.stack') },
     { href: '#contact', label: t('navbar.contact') },
   ];
+  
   return (
-    <header aria-label="Primary" className="sticky top-0 z-40 border-b border-white/5 backdrop-blur bg-black/40">
-      <div className="container flex h-14 items-center justify-between">
-        <Link href="#" className="inline-flex items-center gap-2 text-white font-semibold">
-          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-brand-500 shadow-[0_0_20px_#8b5cf6]"></span>
-          <span className="tracking-tight">DPU Labs SpA</span>
+    <header aria-label="Primary" className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/60 shadow-lg shadow-black/20">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href="#" className="inline-flex items-center gap-2 text-white font-bold text-lg group">
+          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-brand-500 shadow-[0_0_20px_#8b5cf6] group-hover:shadow-[0_0_30px_#8b5cf6] transition-shadow"></span>
+          <span className="tracking-tight">DPU Labs <span className="text-neutral-400 font-normal">SpA</span></span>
         </Link>
+        
         <div className="flex items-center gap-4">
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             {nav.map((n) => (
-              <Link key={n.href} href={n.href} className="text-sm text-neutral-300 hover:text-white">
+              <Link 
+                key={n.href} 
+                href={n.href} 
+                className="text-sm text-neutral-300 hover:text-white transition-colors relative group py-1"
+              >
+                {n.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            ))}
+          </nav>
+          
+          <LanguageSwitcher />
+          <UserButton />
+          
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-neutral-300 hover:text-white p-2 rounded-md hover:bg-white/10 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+      
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-white/5 bg-black/95 backdrop-blur-md animate-slide-down">
+          <nav className="container py-4 flex flex-col gap-2" aria-label="Mobile navigation">
+            {nav.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-neutral-300 hover:text-white hover:bg-white/5 px-4 py-3 rounded-md transition-colors"
+              >
                 {n.label}
               </Link>
             ))}
           </nav>
-          <LanguageSwitcher />
-          <UserButton />
-          <div className="md:hidden text-neutral-400 text-sm">Menu</div>
         </div>
-      </div>
+      )}
     </header>
   );
 }

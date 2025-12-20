@@ -2,6 +2,10 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
 const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
+  '/api/osint(.*)',
+  '/api/invoices(.*)',
+  '/api/expenses(.*)',
+  '/api/errors(.*)',
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
@@ -13,6 +17,12 @@ export default clerkMiddleware(async (auth, req) => {
 });
 
 export const config = {
-  // Reducimos el alcance del middleware solo al dashboard
-  matcher: ['/dashboard(.*)'],
+  // Incluir dashboard y APIs protegidas
+  matcher: [
+    '/dashboard(.*)',
+    '/api/osint(.*)',
+    '/api/invoices(.*)',
+    '/api/expenses(.*)',
+    '/api/errors(.*)',
+  ],
 };
