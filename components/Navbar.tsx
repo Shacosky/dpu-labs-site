@@ -48,16 +48,20 @@ export function Navbar() {
         
         <div className="flex items-center gap-4">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-            {nav.map((n) => (
-              <Link 
-                key={n.href} 
-                href={n.href} 
-                className="text-sm text-neutral-300 hover:text-white transition-colors relative group py-1"
-              >
-                {n.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 group-hover:w-full transition-all duration-300"></span>
-              </Link>
+          <nav className="hidden md:flex items-center gap-0" aria-label="Main navigation">
+            {nav.map((n, i) => (
+              <span key={n.href + '-wrap'} className="flex items-center">
+                <Link
+                  href={n.href}
+                  className="text-sm text-neutral-300 hover:text-white transition-colors relative group py-1 px-4"
+                >
+                  {n.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+                {i < nav.length - 1 && (
+                  <span key={n.href + '-sep'} className="h-5 w-px bg-white/10 mx-1" aria-hidden="true"></span>
+                )}
+              </span>
             ))}
           </nav>
           
