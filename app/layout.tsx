@@ -112,6 +112,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark">
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

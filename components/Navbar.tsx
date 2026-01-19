@@ -20,9 +20,30 @@ export function Navbar() {
   return (
     <header aria-label="Primary" className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/60 shadow-lg shadow-black/20">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="#" className="inline-flex items-center gap-2 text-white font-bold text-lg group">
-          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-brand-500 shadow-[0_0_20px_#8b5cf6] group-hover:shadow-[0_0_30px_#8b5cf6] transition-shadow"></span>
-          <span className="tracking-tight">DPU Labs <span className="text-neutral-400 font-normal">SpA</span></span>
+        <Link href="#" className="inline-flex items-center gap-2 font-black group">
+          <img
+            src="/Aguila.svg"
+            alt="Logo Águila"
+            className="h-12 w-auto"
+            style={{ minWidth: 40, maxHeight: 48 }}
+            draggable={false}
+          />
+          <span
+            className="font-black select-none"
+            style={{
+              fontFamily: "'Inter', 'Segoe UI', Arial, sans-serif",
+              fontSize: '2.25rem',
+              color: '#fff',
+              lineHeight: 1,
+              letterSpacing: '0.08em',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            DPUX
+            <span style={{ color: '#2B8CFF' }}>L</span>
+            ABS
+          </span>
         </Link>
         
         <div className="flex items-center gap-4">
