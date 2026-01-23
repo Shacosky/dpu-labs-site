@@ -1,6 +1,14 @@
 import mongoose from 'mongoose';
 
 const ProjectSchema = new mongoose.Schema(
+      features: {
+        type: [String],
+        default: [],
+      },
+      useCases: {
+        type: [String],
+        default: [],
+      },
   {
     name: {
       type: String,
@@ -8,19 +16,18 @@ const ProjectSchema = new mongoose.Schema(
     },
     clientId: {
       type: String,
-      required: true,
+      required: false,
     },
     type: {
       type: String,
-      enum: ['pentesting', 'audit', 'consulting', 'training'],
-      default: 'pentesting',
+      default: 'general',
     },
     description: {
       type: String,
     },
     startDate: {
       type: Date,
-      required: true,
+      required: false,
     },
     endDate: {
       type: Date,

@@ -49,7 +49,17 @@ export async function POST(request: NextRequest) {
     if (!rate.allowed) return createRateLimitResponse(rate.resetTime);
 
     const { userId } = await auth();
-    const body = await request.json();
+    let body = {};
+    try {
+      body = await request.json();
+    } catch (jsonError) {
+      // Si el body está vacío o malformado, registrar como error especial
+      console.warn('POST /api/errors recibió body vacío o malformado:', jsonError);
+      return NextResponse.json(
+        { success: false, error: 'Invalid or empty JSON body' },
+        { status: 400 }
+      );
+    }
 
     await dbConnect();
 

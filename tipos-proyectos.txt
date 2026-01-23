@@ -1,0 +1,41 @@
+You are working on the official website of a technology company called DPU Labs SpA.
+
+Context:
+DPU Labs delivers multiple types of projects, mainly focused on:
+- Cybersecurity (defensive, preventive, monitoring)
+- CCTV & physical security systems (condominiums, companies, communities)
+- Software development and automation
+- AI-based solutions and data analysis
+- Infrastructure, monitoring and integrations
+
+Goal:
+Create a clean, scalable structure for a “Projects / Services” section that can support multiple project types without hardcoding specifics.
+
+Requirements:
+- Use a modular approach (components/sections reusable).
+- Each project/service must have:
+  - Title
+  - Short value proposition
+  - Key features (bullet points)
+  - Typical use cases
+  - Call to action (contact / quote)
+- Must be suitable for a professional tech company (no marketing fluff).
+- Tone: serious, clear, enterprise-ready.
+- Optimized for future growth (more services will be added).
+
+If coding:
+- Prefer React / Next.js style components.
+- Use semantic HTML.
+- Keep styling abstract (Tailwind-friendly).
+- No mock data overload, use placeholders where needed.
+
+If writing content:
+- Keep text concise and professional.
+- Focus on clarity, trust, and capability.
+
+Deliver:
+- Suggested folder/component structure
+- Example component or section
+- Example content for:
+  - Cybersecurity
+  - CCTV / Physical Security

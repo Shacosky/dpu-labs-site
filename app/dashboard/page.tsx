@@ -38,15 +38,15 @@ export default async function DashboardPage() {
         </a>
 
         {/* Card 3: Proyectos */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+        <a href="/dashboard/projects" className="rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-colors">
           <h2 className="text-xl font-semibold text-white mb-2">Proyectos</h2>
           <p className="text-sm text-neutral-300 mb-4">
             Gestiona tus proyectos de pentesting y auditorías
           </p>
-          <div className="text-sm text-neutral-400">
-            Próximamente
+          <div className="text-sm text-brand-400 hover:text-brand-300">
+            Ir a Proyectos →
           </div>
-        </div>
+        </a>
 
         {/* Card 4: Soporte */}
         <div className="rounded-xl border border-white/10 bg-white/5 p-6">
