@@ -9,6 +9,8 @@ export interface Project {
   endDate?: string;
   status?: string;
   budget?: number;
+  features?: string[];
+  useCases?: string[];
 }
 
 export function useProjects() {

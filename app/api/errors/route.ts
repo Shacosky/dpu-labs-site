@@ -4,6 +4,18 @@ import dbConnect from '@/lib/db/mongodb';
 import ErrorLog from '@/lib/models/ErrorLog';
 import { checkRateLimit, createRateLimitResponse } from '@/lib/rateLimit';
 
+interface ErrorLogBody {
+  type?: string;
+  message?: string;
+  stack?: string;
+  componentStack?: string;
+  url?: string;
+  method?: string;
+  statusCode?: number;
+  userAgent?: string;
+  metadata?: any;
+}
+
 export async function GET(request: NextRequest) {
   try {
     const rate = await checkRateLimit(request);
@@ -49,7 +61,7 @@ export async function POST(request: NextRequest) {
     if (!rate.allowed) return createRateLimitResponse(rate.resetTime);
 
     const { userId } = await auth();
-    let body = {};
+    let body: ErrorLogBody = {};
     try {
       body = await request.json();
     } catch (jsonError) {

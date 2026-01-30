@@ -1,14 +1,6 @@
 import mongoose from 'mongoose';
 
 const ProjectSchema = new mongoose.Schema(
-      features: {
-        type: [String],
-        default: [],
-      },
-      useCases: {
-        type: [String],
-        default: [],
-      },
   {
     name: {
       type: String,
@@ -39,6 +31,14 @@ const ProjectSchema = new mongoose.Schema(
       type: String,
       enum: ['planning', 'in_progress', 'completed', 'on_hold'],
       default: 'planning',
+    },
+    features: {
+      type: [String],
+      default: [],
+    },
+    useCases: {
+      type: [String],
+      default: [],
     },
     findings: {
       critical: { type: Number, default: 0 },
