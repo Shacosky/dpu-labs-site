@@ -23,7 +23,7 @@ export function Navbar() {
         <Link href="/" className="inline-flex items-center gap-2 font-black group">
           <img
             src="/Aguila.svg"
-            alt="DPU Labs logo"
+            alt="DPUXLABS logo"
             className="h-12 w-auto"
             style={{ minWidth: 40, maxHeight: 48 }}
             draggable={false}
@@ -40,8 +40,8 @@ export function Navbar() {
               alignItems: 'center',
             }}
           >
-            DPU
-            <span style={{ color: '#2B8CFF' }}>Labs</span>
+            DPUX
+            <span style={{ color: '#2B8CFF' }}>LABS</span>
           </span>
         </Link>
         

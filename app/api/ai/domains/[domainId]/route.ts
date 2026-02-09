@@ -3,15 +3,15 @@ import { DomainService } from '@/lib/services/DomainService';
 import { Types } from 'mongoose';
 
 /**
- * GET /api/ai/domains/[id] - Obtener dominio
+ * GET /api/ai/domains/[domainId] - Obtener dominio
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ domainId: string }> }
 ) {
   try {
-    const { id } = await params;
-    const domain = await DomainService.getDomain(id);
+    const { domainId } = await params;
+    const domain = await DomainService.getDomain(domainId);
 
     if (!domain) {
       return NextResponse.json(
@@ -30,17 +30,17 @@ export async function GET(
 }
 
 /**
- * PATCH /api/ai/domains/[id] - Actualizar dominio
+ * PATCH /api/ai/domains/[domainId] - Actualizar dominio
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ domainId: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { domainId } = await params;
     const body = await request.json();
 
-    const result = await DomainService.updateDomain(id, body);
+    const result = await DomainService.updateDomain(domainId, body);
 
     if (result.success) {
       return NextResponse.json({ success: true, data: result.domain });

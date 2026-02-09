@@ -2,18 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import { DomainService } from '@/lib/services/DomainService';
 
 /**
- * GET /api/ai/domains/[id]/stats - Obtener estadísticas
+ * GET /api/ai/domains/[domainId]/stats - Obtener estadísticas
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ domainId: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { domainId } = await params;
     const { total, approved } = await DomainService.countNodesByDomain(
-      id
+      domainId
     );
-    const { qualityScore } = await DomainService.updateQualityScore(id);
+    const { qualityScore } = await DomainService.updateQualityScore(domainId);
 
     return NextResponse.json({
       success: true,

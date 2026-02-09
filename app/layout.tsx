@@ -14,7 +14,7 @@ import { PageViewTracker } from '@/components/PageViewTracker';
 import organizationSchema from './organization-schema.json';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dpulabs.is-a.dev'),
+  metadataBase: new URL('https://dpuxlabs.cl'),
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -25,16 +25,18 @@ export const metadata: Metadata = {
     ],
   },
   title: {
-    default: 'DPU Labs SpA — Ciberseguridad Purple-Team, Automatización IA, AWS Cloud',
-    template: '%s • DPU Labs SpA',
+    default: 'DPUXLABS SpA — Ciberseguridad Purple-Team, Automatización IA, AWS Cloud',
+    template: '%s • DPUXLABS SpA',
   },
   description:
-    'DPU Labs SpA: ciberseguridad purple-team, automatización impulsada por IA, AWS cloud/DevOps, e integración de datos moderna. Entregamos en Perú, México y toda LATAM con experiencia regional.',
-  applicationName: 'DPU Labs SpA',
-  authors: [{ name: 'DPU Labs SpA', url: 'https://dpulabs.is-a.dev' }],
+    'DPUXLABS SpA: ciberseguridad purple-team, automatización impulsada por IA, AWS cloud/DevOps, e integración de datos moderna. Entregamos en Perú, México y toda LATAM con experiencia regional.',
+  applicationName: 'DPUXLABS SpA',
+  authors: [{ name: 'DPUXLABS SpA', url: 'https://dpuxlabs.cl' }],
   keywords: [
+    'DPUXLABS',
+    'DPUX Labs',
     'DPU Labs',
-    'DPU Labs SpA',
+    'DPUXLABS SpA',
     'Ciberseguridad',
     'Purple Team',
     'Automatización IA',
@@ -59,23 +61,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_CL',
     alternateLocale: ['es_PE', 'es_MX', 'en_US'],
-    url: 'https://dpulabs.is-a.dev',
-    title: 'DPU Labs SpA — Ciberseguridad Purple-Team, Automatización IA, AWS Cloud',
+    url: 'https://dpuxlabs.cl',
+    title: 'DPUXLABS SpA — Ciberseguridad Purple-Team, Automatización IA, AWS Cloud',
     description:
       'Ciberseguridad purple-team con automatización IA, AWS cloud/DevOps, e integración de datos moderna. Entrega regional: Perú, México y toda LATAM.',
-    siteName: 'DPU Labs SpA',
+    siteName: 'DPUXLABS SpA',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'DPU Labs SpA — Ciberseguridad Purple-Team y Automatización IA',
+        alt: 'DPUXLABS SpA — Ciberseguridad Purple-Team y Automatización IA',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DPU Labs SpA — Ciberseguridad Purple-Team, Automatización IA',
+    title: 'DPUXLABS SpA — Ciberseguridad Purple-Team, Automatización IA',
     description:
       'Automatización con seguridad primero y resultados cloud para Perú, México y LATAM.',
     images: ['/opengraph-image'],
@@ -93,7 +95,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://dpulabs.is-a.dev',
+    canonical: 'https://dpuxlabs.cl',
   },
   category: 'technology',
   verification: {
@@ -110,15 +112,15 @@ export const metadata: Metadata = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'DPU Labs SpA',
-  url: 'https://dpulabs.is-a.dev',
+  name: 'DPUXLABS SpA',
+  url: 'https://dpuxlabs.cl',
   inLanguage: 'es-CL',
   description:
-    'DPU Labs SpA: ciberseguridad purple-team, automatizacion con IA, AWS cloud/DevOps e integracion de datos moderna.',
+    'DPUXLABS SpA: ciberseguridad purple-team, automatizacion con IA, AWS cloud/DevOps e integracion de datos moderna.',
   publisher: {
     '@type': 'Organization',
-    name: 'DPU Labs SpA',
-    url: 'https://dpulabs.is-a.dev',
+    name: 'DPUXLABS SpA',
+    url: 'https://dpuxlabs.cl',
   },
 };
 
