@@ -6,11 +6,12 @@ import { ModelVersionService } from '@/lib/services/ModelVersionService';
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { version: string } }
+  { params }: { params: Promise<{ version: string }> }
 ) {
   try {
+    const { version } = await params;
     const modelVersion = await ModelVersionService.getModelVersion(
-      params.version
+      version
     );
 
     if (!modelVersion) {
@@ -34,15 +35,16 @@ export async function GET(
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { version: string } }
+  { params }: { params: Promise<{ version: string }> }
 ) {
   try {
     const body = await request.json();
+    const { version } = await params;
     const { action, ...data } = body;
 
     if (action === 'updateStatus') {
       const result = await ModelVersionService.updateVersionStatus(
-        params.version,
+        version,
         data.status
       );
 
@@ -56,7 +58,7 @@ export async function PATCH(
       }
     } else if (action === 'updatePerformance') {
       const result = await ModelVersionService.updatePerformanceMetrics(
-        params.version,
+        version,
         data
       );
 
@@ -70,7 +72,7 @@ export async function PATCH(
       }
     } else if (action === 'updateInference') {
       const result = await ModelVersionService.updateInferenceStats(
-        params.version,
+        version,
         data
       );
 
@@ -83,7 +85,7 @@ export async function PATCH(
         );
       }
     } else if (action === 'promoteToStable') {
-      const result = await ModelVersionService.promoteToStable(params.version);
+      const result = await ModelVersionService.promoteToStable(version);
 
       if (result.success) {
         return NextResponse.json({ success: true, data: result.modelVersion });

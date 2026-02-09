@@ -6,14 +6,15 @@ import { SubdomainService } from '@/lib/services/SubdomainService';
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { domainId: string } }
+  { params }: { params: Promise<{ domainId: string }> }
 ) {
   try {
+    const { domainId } = await params;
     const searchParams = request.nextUrl.searchParams;
     const status = searchParams.get('status');
 
     const subdomains = await SubdomainService.listSubdomainsByDomain(
-      params.domainId,
+      domainId,
       { status: status || undefined }
     );
 
@@ -35,10 +36,11 @@ export async function GET(
  */
 export async function POST(
   request: NextRequest,
-  { params }: { params: { domainId: string } }
+  { params }: { params: Promise<{ domainId: string }> }
 ) {
   try {
     const body = await request.json();
+    const { domainId } = await params;
 
     const { name, description, slug, icon, order, metadata } = body;
 
@@ -50,7 +52,7 @@ export async function POST(
     }
 
     const result = await SubdomainService.createSubdomain({
-      domainId: params.domainId,
+      domainId: domainId,
       name,
       description,
       slug,

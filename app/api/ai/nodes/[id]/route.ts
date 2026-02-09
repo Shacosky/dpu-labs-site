@@ -6,10 +6,11 @@ import { NodeService } from '@/lib/services/NodeService';
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const node = await NodeService.getNode(params.id);
+    const { id } = await params;
+    const node = await NodeService.getNode(id);
 
     if (!node) {
       return NextResponse.json(
@@ -19,7 +20,7 @@ export async function GET(
     }
 
     // Registrar visualización
-    await NodeService.recordView(params.id);
+    await NodeService.recordView(id);
 
     return NextResponse.json({ success: true, data: node });
   } catch (error) {
@@ -35,14 +36,15 @@ export async function GET(
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json();
+    const { id } = await params;
     const { action, ...updates } = body;
 
     if (action === 'validate') {
-      const result = await NodeService.validateNode(params.id, {
+      const result = await NodeService.validateNode(id, {
         status: updates.status,
         score: updates.score,
         comments: updates.comments,
@@ -58,7 +60,7 @@ export async function PATCH(
         );
       }
     } else if (action === 'addFeedback') {
-      const result = await NodeService.addFeedback(params.id, {
+      const result = await NodeService.addFeedback(id, {
         userId: updates.userId,
         rating: updates.rating,
         comment: updates.comment,
@@ -86,32 +88,3 @@ export async function PATCH(
   }
 }
 
-/**
- * GET /api/ai/nodes/[id]/related - Obtener nodos relacionados
- */
-export async function GET_RELATED(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const result = await NodeService.getRelatedNodes(params.id, 10);
-
-    if (result.success) {
-      return NextResponse.json({
-        success: true,
-        data: result.relatedNodes,
-        count: result.relatedNodes?.length || 0,
-      });
-    } else {
-      return NextResponse.json(
-        { success: false, error: result.error },
-        { status: 404 }
-      );
-    }
-  } catch (error) {
-    return NextResponse.json(
-      { success: false, error: (error as any).message },
-      { status: 500 }
-    );
-  }
-}

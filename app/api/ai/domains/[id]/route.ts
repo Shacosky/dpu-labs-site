@@ -7,10 +7,11 @@ import { Types } from 'mongoose';
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const domain = await DomainService.getDomain(params.id);
+    const { id } = await params;
+    const domain = await DomainService.getDomain(id);
 
     if (!domain) {
       return NextResponse.json(
@@ -33,12 +34,13 @@ export async function GET(
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
 
-    const result = await DomainService.updateDomain(params.id, body);
+    const result = await DomainService.updateDomain(id, body);
 
     if (result.success) {
       return NextResponse.json({ success: true, data: result.domain });
@@ -48,37 +50,6 @@ export async function PATCH(
         { status: 400 }
       );
     }
-  } catch (error) {
-    return NextResponse.json(
-      { success: false, error: (error as any).message },
-      { status: 500 }
-    );
-  }
-}
-
-/**
- * GET /api/ai/domains/[id]/stats - Obtener estadísticas
- */
-export async function GET_STATS(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const { total, approved } = await DomainService.countNodesByDomain(
-      params.id
-    );
-    const { qualityScore } = await DomainService.updateQualityScore(params.id);
-
-    return NextResponse.json({
-      success: true,
-      data: {
-        totalNodes: total,
-        approvedNodes: approved,
-        qualityScore,
-        approvalRate:
-          total > 0 ? ((approved / total) * 100).toFixed(2) : 0,
-      },
-    });
   } catch (error) {
     return NextResponse.json(
       { success: false, error: (error as any).message },

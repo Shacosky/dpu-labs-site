@@ -144,7 +144,6 @@ const AiModelVersionSchema = new Schema(
   { timestamps: true }
 );
 
-AiModelVersionSchema.index({ versionNumber: 1 });
 AiModelVersionSchema.index({ status: 1, releaseDate: -1 });
 AiModelVersionSchema.index({ domains: 1, status: 1 });
 

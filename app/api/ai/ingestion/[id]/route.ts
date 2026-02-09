@@ -6,10 +6,11 @@ import { IngestionService } from '@/lib/services/IngestionService';
  */
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json();
+    const { id } = await params;
 
     const { nodes, executedBy } = body;
 
@@ -21,7 +22,7 @@ export async function POST(
     }
 
     const result = await IngestionService.processBatch(
-      params.id,
+      id,
       nodes,
       executedBy
     );
@@ -47,14 +48,15 @@ export async function POST(
  */
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json();
+    const { id } = await params;
     const { action } = body;
 
     if (action === 'complete') {
-      const result = await IngestionService.completeIngestion(params.id);
+      const result = await IngestionService.completeIngestion(id);
 
       if (result.success) {
         return NextResponse.json({ success: true, data: result.ingestion });
@@ -66,7 +68,7 @@ export async function PATCH(
       }
     } else if (action === 'fail') {
       const result = await IngestionService.failIngestion(
-        params.id,
+        id,
         body.errorMessage
       );
 
@@ -97,10 +99,11 @@ export async function PATCH(
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const result = await IngestionService.getIngestionStats(params.id);
+    const { id } = await params;
+    const result = await IngestionService.getIngestionStats(id);
 
     if (result.success) {
       return NextResponse.json({ success: true, data: result.stats });

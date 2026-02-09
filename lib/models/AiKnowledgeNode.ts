@@ -198,9 +198,7 @@ const AiKnowledgeNodeSchema = new Schema(
 );
 
 // Índices para búsqueda y rendimiento
-AiKnowledgeNodeSchema.index({ subdomainId: 1, validation: { status: 1 } });
-AiKnowledgeNodeSchema.index({ keywords: 1 });
-AiKnowledgeNodeSchema.index({ category: 1 });
+AiKnowledgeNodeSchema.index({ subdomainId: 1, 'validation.status': 1 });
 AiKnowledgeNodeSchema.index({ 'validation.status': 1, 'stats.feedbackScore': -1 });
 AiKnowledgeNodeSchema.index({ createdAt: -1 }); // Para ingesta incremental
 

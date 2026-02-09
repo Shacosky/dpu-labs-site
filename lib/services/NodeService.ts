@@ -201,7 +201,7 @@ export class NodeService {
 
       // Calcular nuevo score de feedback
       const avgRating =
-        node.stats.feedback.reduce((sum, f) => sum + f.rating, 0) /
+        node.stats.feedback.reduce((sum: number, f: any) => sum + f.rating, 0) /
         node.stats.feedback.length;
       node.stats.feedbackScore = Math.round(avgRating * 20); // Escala 0-100
 
