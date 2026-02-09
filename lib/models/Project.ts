@@ -8,19 +8,18 @@ const ProjectSchema = new mongoose.Schema(
     },
     clientId: {
       type: String,
-      required: true,
+      required: false,
     },
     type: {
       type: String,
-      enum: ['pentesting', 'audit', 'consulting', 'training'],
-      default: 'pentesting',
+      default: 'general',
     },
     description: {
       type: String,
     },
     startDate: {
       type: Date,
-      required: true,
+      required: false,
     },
     endDate: {
       type: Date,
@@ -32,6 +31,14 @@ const ProjectSchema = new mongoose.Schema(
       type: String,
       enum: ['planning', 'in_progress', 'completed', 'on_hold'],
       default: 'planning',
+    },
+    features: {
+      type: [String],
+      default: [],
+    },
+    useCases: {
+      type: [String],
+      default: [],
     },
     findings: {
       critical: { type: Number, default: 0 },

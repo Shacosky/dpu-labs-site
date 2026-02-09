@@ -11,9 +11,13 @@ export default function Page() {
   return (
     <div className="space-y-28 sm:space-y-32 py-12 sm:py-16">
       <Hero />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Services />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Cases />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Stack />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Contact />
     </div>
   );
