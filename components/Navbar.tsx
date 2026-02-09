@@ -20,10 +20,10 @@ export function Navbar() {
   return (
     <header aria-label="Primary" className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/60 shadow-lg shadow-black/20">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="#" className="inline-flex items-center gap-2 font-black group">
+        <Link href="/" className="inline-flex items-center gap-2 font-black group">
           <img
             src="/Aguila.svg"
-            alt="Logo Águila"
+            alt="DPU Labs logo"
             className="h-12 w-auto"
             style={{ minWidth: 40, maxHeight: 48 }}
             draggable={false}
@@ -40,9 +40,8 @@ export function Navbar() {
               alignItems: 'center',
             }}
           >
-            DPUX
-            <span style={{ color: '#2B8CFF' }}>L</span>
-            ABS
+            DPU
+            <span style={{ color: '#2B8CFF' }}>Labs</span>
           </span>
         </Link>
         

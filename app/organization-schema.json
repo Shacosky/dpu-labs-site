@@ -2,6 +2,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "DPU Labs SpA",
+  "alternateName": ["DPU Labs", "DPULABS", "DPUX Labs"],
   "legalName": "DPU Labs Sociedad por Acciones",
   "url": "https://dpulabs.is-a.dev",
   "logo": "https://dpulabs.is-a.dev/icon.png",
