@@ -104,15 +104,64 @@
 - [ ] 🔴 🔒 Dashboard de riesgo en tiempo real
 - [ ] 🔴 💰 Subscripción premium para threat intel feeds
 
-### Automatización IA
-- [ ] 🔴 ⭐ Generación de reportes de pentest con IA
-- [ ] 🔴 Análisis de logs con LLMs
+### 🧠 DPU Labs Custom AI Engine (FLAGSHIP)
+- [ ] 🔴 ⭐💰 **Núcleo de IA propia** (Fine-tuned LLM multidisciplinario)
+  - [ ] 🔴 ⭐ Entrenamiento con datasets propios (pentest, OSINT, legal, auditoría, compliance)
+  - [ ] 🔴 🔒 Privacidad: Sin envío de datos a terceros (100% on-premise capable)
+  - [ ] 🔴 Base en ciberseguridad + expansión a múltiples dominios
+  - [ ] 🔴 Inference engine optimizado (baja latencia, low resource footprint)
+  - [ ] 🔴 Versionado de modelos (rollback capability)
+  - [ ] 🔴 Fine-tuning capability para clientes enterprise
+- [ ] 🔴 ⭐💰 **Knowledge Base Segmentada (Crecimiento Progresivo)**
+  - [ ] 🔴 ⭐ Sistema de taxonomía multinivel (dominios → subdominios → tópicos)
+  - [ ] 🔴 ⭐ Ingesta incremental de conocimiento (sin reentrenamiento completo)
+  - [ ] 🔴 🔒 Validación y curación de datos antes de indexación
+  - [ ] 🔴 Versionado de knowledge base por fecha
+  - [ ] 🔴 Tracking de fuentes (trazabilidad de datos)
+  - [ ] 🔴 Dashboard de calidad del conocimiento por dominio
+  - [ ] 🔴 Feedback loop automático (mejora basada en uso)
+  - **Dominios Iniciales Segmentados:**
+    - [ ] 🔴 **Ciberseguridad**: CVEs, CVSS, técnicas ATT&CK, remediaciones
+    - [ ] 🔴 **Legal/Compliance**: Templates, normativas por país, cláusulas estándar
+    - [ ] 🔴 **Auditoría**: Hallazgos históricos, patrones de riesgo, controles
+    - [ ] 🔴 **OSINT**: Fuentes públicas, técnicas de investigación, análisis de relaciones
+    - [ ] 🔴 **Finanzas**: Estándares contables, categorización de gastos, ratios
+    - [ ] 🔴 **General/Transversal**: Procedimientos internos, mejores prácticas
+- [ ] 🔴 ⭐💰 **API Pública para DPU Labs AI** (Agnóstica a industria)
+  - [ ] 🔴 Endpoints REST para análisis genéricos y especializados
+  - [ ] 🔴 Query by domain/category filtering
+  - [ ] 🔴 Webhook integration para pipelines cliente
+  - [ ] 🔴 WebSocket para chat en tiempo real
+  - [ ] 🔴 Rate limiting y quotas por tier
+  - [ ] 🔴 🔒 API keys con rotación automática
+  - [ ] 🔴 Documentation + SDK (Python, JS, Go)
+  - [ ] 🔴 Batch processing API para análisis de volumen
+- [ ] 🔴 ⭐ **Capabilidades del Motor IA (Multidisciplinarias)**
+  - [ ] 🔴 **Ciberseguridad**: Análisis de reportes pentest, generación de remediaciones, detección de anomalías
+  - [ ] 🔴 **Legal/Compliance**: Análisis de documentos legales, extracción de cláusulas, mapeo normativo
+  - [ ] 🔴 **Auditoría**: Clasificación de hallazgos, priorización de riesgos, sugerencias de control
+  - [ ] 🔴 **OSINT**: Síntesis de investigaciones, conexión de datos, reportería contextualizada
+  - [ ] 🔴 **Finanzas**: Análisis de facturas, detección de anomalías en gastos, forecasting
+  - [ ] 🔴 **General**: RAG sobre base de conocimiento interna, procesamiento de lenguaje natural
+  - [ ] 🔴 **Extracción**: OCR + extracción de datos de documentos (PDF, imágenes)
+- [ ] 🔴 💰 **Monetización del Motor IA**
+  - [ ] 🔴 💰 Tier Starter (API pública con límites, modelos base)
+  - [ ] 🔴 💰 Tier Professional (endpoints privados, mayor throughput, RAG personalizado por dominio)
+  - [ ] 🔴 💰 Tier Enterprise (modelo custom + fine-tuning + soporte dedicado + on-premise + KB private)
+  - [ ] 🔴 💰 Pay-per-use (token-based pricing)
+  - [ ] 🔴 💰 Integración con otros proyectos (pricing por uso)
+  - [ ] 🔴 💰 Marketplace de prompts y templates premium
+  - [ ] 🔴 💰 Reseller program (partners pueden vender APIs custom)
+  - [ ] 🔴 💰 Data subscription (venta de datasets curados por dominio)
+
+### Automatización IA (Integración con Custom Engine)
+- [ ] 🔴 ⭐ Generación de reportes de pentest con DPU Labs AI
+- [ ] 🔴 Análisis de logs con motor propio
 - [ ] 🔴 Detección de anomalías en tráfico de red
 - [ ] 🔴 Clasificación automática de vulnerabilidades
 - [ ] 🔴 Sugerencias de remediación contextualizadas
 - [ ] 🔴 Chatbot de soporte con RAG sobre documentación
 - [ ] 🔴 Predicción de riesgo basada en ML
-- [ ] 🔴 💰 API de IA-as-a-Service para partners
 
 ### Red Team / Purple Team
 - [ ] 🔴 Simulación de ataques (adversary emulation)
