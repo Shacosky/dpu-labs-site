@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Suspense } from 'react';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -8,10 +9,21 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ErrorMonitor } from '@/components/ErrorMonitor';
 import { ToastProvider } from '@/contexts/ToastContext';
+import { CookieConsent } from '@/components/CookieConsent';
+import { PageViewTracker } from '@/components/PageViewTracker';
 import organizationSchema from './organization-schema.json';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dpulabs.is-a.dev'),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+  },
   title: {
     default: 'DPU Labs SpA — Ciberseguridad Purple-Team, Automatización IA, AWS Cloud',
     template: '%s • DPU Labs SpA',
@@ -82,10 +94,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://dpulabs.is-a.dev',
-    languages: {
-      'es-CL': 'https://dpulabs.is-a.dev',
-      'en-US': 'https://dpulabs.is-a.dev/en',
-    },
   },
   category: 'technology',
   verification: {
@@ -96,6 +104,21 @@ export const metadata: Metadata = {
     'contact:phone': '+56942867168',
     'geo.region': 'CL-LI',
     'geo.placename': 'Rancagua, Chile',
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'DPU Labs SpA',
+  url: 'https://dpulabs.is-a.dev',
+  inLanguage: 'es-CL',
+  description:
+    'DPU Labs SpA: ciberseguridad purple-team, automatizacion con IA, AWS cloud/DevOps e integracion de datos moderna.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'DPU Labs SpA',
+    url: 'https://dpulabs.is-a.dev',
   },
 };
 
@@ -113,9 +136,13 @@ export default function RootLayout({
     <html lang="es" className="dark">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationSchema, websiteSchema]),
+          }}
         />
       </head>
       <body>
@@ -134,7 +161,11 @@ export default function RootLayout({
                 <main id="content" className="container">
                   {children}
                 </main>
+                <Suspense fallback={null}>
+                  <PageViewTracker />
+                </Suspense>
                 <Footer />
+                <CookieConsent />
                 <SpeedInsights />
               </I18nProvider>
             </ToastProvider>
