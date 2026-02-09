@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Suspense } from 'react';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -8,6 +9,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ErrorMonitor } from '@/components/ErrorMonitor';
 import { ToastProvider } from '@/contexts/ToastContext';
+import { CookieConsent } from '@/components/CookieConsent';
+import { PageViewTracker } from '@/components/PageViewTracker';
 import organizationSchema from './organization-schema.json';
 
 export const metadata: Metadata = {
@@ -158,7 +161,11 @@ export default function RootLayout({
                 <main id="content" className="container">
                   {children}
                 </main>
+                <Suspense fallback={null}>
+                  <PageViewTracker />
+                </Suspense>
                 <Footer />
+                <CookieConsent />
                 <SpeedInsights />
               </I18nProvider>
             </ToastProvider>
