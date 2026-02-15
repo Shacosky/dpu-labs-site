@@ -26,6 +26,15 @@ export default {
         'grid-dark':
           'radial-gradient(circle at 1px 1px, rgba(139,92,246,0.2) 1px, transparent 0)',
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out',
+      },
     },
   },
   plugins: [],

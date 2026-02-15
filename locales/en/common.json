@@ -5,6 +5,28 @@
     "description": "DPUXLABS SpA integrates purple‑team practices with AI automation, AWS cloud/DevOps, and modern data integration. We deliver measurable outcomes across Peru and Mexico.",
     "whatsapp": "Talk on WhatsApp",
     "explore": "Explore services",
+    "engineering": {
+      "title": "Software Engineer",
+      "subtitle": "Systems & Architecture",
+      "description": "Backend-first. Production-ready. Security mindset. Real systems, not startups.",
+      "cta1": "Tech Stack",
+      "cta2": "Security",
+      "cta3": "Contact"
+    },
+    "proofCards": {
+      "architecture": {
+        "title": "Architecture",
+        "description": "System design, backend robustness, modular patterns, scalability from day one."
+      },
+      "production": {
+        "title": "Production",
+        "description": "Real systems in production. Observability, logging, deployments, reliability."
+      },
+      "ai": {
+        "title": "Applied AI",
+        "description": "RAG, automation, assistants, LLM integration. Evidence-based implementations."
+      }
+    },
     "slide2": {
       "badge": "Digital Transformation • Cloud Native",
       "title": "Modernize your infrastructure with world-class technology",
@@ -118,7 +140,7 @@
   },
   "stack": {
     "title": "Stack",
-    "subtitle": "Standards‑aligned technologies for secure, observable, and scalable delivery."
+    "subtitle": "Technologies chosen to build enterprise-grade products with solid architecture, focused on scalability and reliability."
   },
   "contact": {
     "title": "Let's talk",

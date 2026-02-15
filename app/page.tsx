@@ -2,6 +2,7 @@ import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
 import { Cases } from '@/components/Cases';
 import { Stack } from '@/components/Stack';
+import { SecurityObservability } from '@/components/SecurityObservability';
 import { Contact } from '@/components/Contact';
 
 // Cache estático: revalidar cada hora (3600s)
@@ -17,6 +18,8 @@ export default function Page() {
       <Cases />
       <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Stack />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
+      <SecurityObservability />
       <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Contact />
     </div>

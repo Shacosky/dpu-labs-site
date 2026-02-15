@@ -15,6 +15,38 @@
 
 ---
 
+## ✅ TODO: Plan SEO (DP UXLABS)
+
+### Fundamentos Tecnicos
+- [ ] 🔴 Verificar dominio en Google Search Console (dpuxlabs.cl)
+- [ ] 🔴 Enviar sitemap: https://dpuxlabs.cl/sitemap.xml
+- [ ] 🔴 Revisar indexacion en Search Console (Coverage / Pages)
+- [ ] 🔴 Confirmar favicon y Open Graph en WhatsApp/FB Debugger
+- [ ] 🔴 Validar datos estructurados (Schema.org) en Rich Results Test
+
+### Contenido y Arquitectura
+- [ ] 🔴 Crear paginas de servicio dedicadas (ciberseguridad, IA, cloud, data)
+- [ ] 🔴 Crear casos reales con resultados medibles
+- [ ] 🔴 Agregar pagina de proyectos personales (portafolio)
+- [ ] 🔴 Publicar 2-4 articulos iniciales (problema/solucion/resultados)
+- [ ] 🔴 Enlazado interno desde home a servicios y casos
+
+### Autoridad y Confianza
+- [ ] 🔴 Registrar la marca en perfiles (LinkedIn, GitHub, Medium)
+- [ ] 🔴 Agregar backlinks desde perfiles y partners
+- [ ] 🔴 Incluir datos de contacto consistentes (NAP)
+
+### Rendimiento y Experiencia
+- [ ] 🔴 Revisar Core Web Vitals (LCP/INP/CLS)
+- [ ] 🔴 Optimizar imagenes y fuentes
+- [ ] 🔴 Revisar mobile UX y accesibilidad basica
+
+### Seguimiento
+- [ ] 🔴 Definir keywords objetivo (dpuxlabs, ciberseguridad, purple team, etc.)
+- [ ] 🔴 Revisar posicionamiento cada 2-4 semanas
+
+---
+
 ## 🏗️ FASE 1: Fundamentos (Foundation)
 
 ### Infraestructura Base

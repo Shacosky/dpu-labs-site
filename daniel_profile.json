@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "name": "Daniel Pérez Uribe",
+    "role": "Software Engineer",
+    "company": "DPU Labs SpA",
+    "location": "Chile",
+    "availability": "Remote LATAM / Global",
+    "tagline": "Arquitectura antes que código. Sistemas reales en producción. IA aplicada con evidencia."
+  },
+
+  "brand": {
+    "positioning": "Engineering-first personal platform (not an agency).",
+    "aesthetic": {
+      "theme": "dark",
+      "accent": "purple/violet (purple-team vibe)",
+      "ui": "minimal, sharp hierarchy, subtle gradients, low animation",
+      "avoid": ["generic carousels", "template hero sections", "buzzword-heavy marketing copy"]
+    },
+    "tone_of_voice": {
+      "style": "direct, technical, structured",
+      "principles": [
+        "no humo",
+        "no exagerar",
+        "si falta evidencia, se dice",
+        "respuestas concretas + ejemplos"
+      ]
+    }
+  },
+
+  "engineering_profile": {
+    "core_focus": [
+      "Backend Architecture",
+      "System Design",
+      "Cloud & DevOps thinking",
+      "Applied AI (RAG, automation, assistants)",
+      "Security mindset (purple-team, pragmatic hardening)"
+    ],
+    "stack": {
+      "frontend": ["Next.js", "React", "TypeScript", "TailwindCSS"],
+      "backend": ["Node.js", "REST APIs", "Modular architecture", "Auth flows"],
+      "cloud": ["Vercel", "AWS patterns (serverless, observability)"],
+      "data": ["MongoDB", "PostgreSQL"],
+      "tooling": ["GitHub", "CI/CD", "Logging/Monitoring mindset"],
+      "ai": ["OpenAI API integration", "RAG/File-based knowledge", "Automation workflows"],
+      "mobile_direction": ["React Native (Expo) - reuse React/Next experience"]
+    },
+    "strengths": [
+      "arquitectura por capas y separación de responsabilidades",
+      "diseño de APIs orientadas a claridad y performance",
+      "enfoque en observabilidad (logs/métricas/trazas) para producción",
+      "capacidad de bajar lo complejo a pasos simples y ejecutables",
+      "orientación a seguridad y riesgo (pensamiento de 'cómo se rompe' un sistema)"
+    ],
+    "non_goals": [
+      "No posicionar como agencia creativa",
+      "No vender promesas sin evidencia",
+      "No inventar años de experiencia o empresas",
+      "No agregar features decorativas sin impacto"
+    ]
+  },
+
+  "soft_skills": {
+    "collaboration": [
+      "trabajo en equipo con comunicación directa",
+      "preguntar cuando falta contexto en vez de asumir",
+      "apoyo en code review y estándares",
+      "capacidad de alinear expectativas con stakeholders"
+    ],
+    "communication": [
+      "explica lo técnico con analogías y lenguaje claro",
+      "prefiere visualizaciones (diagramas, flujos) antes que texto infinito",
+      "documenta para que otros puedan mantener"
+    ],
+    "execution": [
+      "orientado a ejecución: tickets pequeños, iteración rápida",
+      "prioriza impacto sobre perfección estética",
+      "manejo bajo presión: lista tareas, define prioridad y comunica riesgos"
+    ],
+    "learning_mindset": [
+      "curiosidad constante por herramientas, IA y seguridad",
+      "aprende haciendo: MVP → feedback → mejora",
+      "convierte errores en hitos de aprendizaje (postmortems, checklist, docs)"
+    ],
+    "leadership": [
+      "mentalidad emprendedora: producto, clientes, operación y entrega",
+      "capacidad de definir visión y roadmap",
+      "gusto por ordenar procesos (Notion/boards/checklists)"
+    ]
+  },
+
+  "methodologies": {
+    "agile": {
+      "approach": "pragmatic agile (no religión)",
+      "practices": [
+        "sprints o ciclos cortos",
+        "daily async (bloqueos y próximos pasos)",
+        "estimaciones por rangos",
+        "definition of done clara",
+        "retros para ajustar proceso"
+      ],
+      "delivery_style": [
+        "MVP primero",
+        "vertical slices (de UI a deploy)",
+        "feature flags si aplica",
+        "release pequeño y frecuente"
+      ]
+    },
+    "engineering_practices": [
+      "clean code / SOLID cuando agrega valor",
+      "código tipado (TypeScript) y linters",
+      "tests donde duele (regresión y core flows)",
+      "observabilidad desde el inicio",
+      "documentación viva (ADR + README + knowledge base)"
+    ]
+  },
+
+  "passions_and_interests": {
+    "tech": [
+      "ciberseguridad aplicada (purple-team, honeypots, hardening)",
+      "arquitectura de software y sistemas escalables",
+      "IA aplicada a productos (asistentes, automatización, RAG)"
+    ],
+    "creative": [
+      "producción musical (Ableton, beats, teoría musical aplicada)",
+      "branding técnico-creativo (estética morada, identidad DPU Labs)",
+      "construir proyectos que mezclen ingeniería + creatividad"
+    ],
+    "style_preferences": {
+      "personal_style": "urbano/creativo con adaptación a entorno oficina",
+      "colors": ["rojo", "amarillo", "verde", "morado"],
+      "hair": "mohicano ordenado / pelo más largo (look urbano)"
+    }
+  },
+
+  "website_objectives": {
+    "primary": "demostrar credibilidad técnica con evidencia",
+    "secondary": "convertir reclutadores y clientes (CTAs claros)",
+    "assistant": {
+      "name": "Daniel AI",
+      "modes": ["Recruiter", "Client", "Technical"],
+      "hard_rule": "Si no está documentado en knowledge/, responder: 'Eso no está documentado todavía.'",
+      "response_format": [
+        "respuesta corta",
+        "bullets",
+        "referencias internas (links a secciones/docs)",
+        "siguiente paso sugerido (CTA)"
+      ]
+    }
+  },
+
+  "ux_rules": {
+    "hero": {
+      "must_include": [
+        "quién soy",
+        "qué hago",
+        "por qué confiar (evidencia/producción/arquitectura)",
+        "CTAs: experiencia, proyectos, asistente"
+      ],
+      "must_avoid": [
+        "carousels",
+        "claims inflados",
+        "texto largo",
+        "animaciones sin propósito"
+      ]
+    },
+    "content_structure": {
+      "projects": "problema → solución → arquitectura → stack → resultados → lecciones",
+      "experience": "roles → responsabilidades → impacto → herramientas",
+      "services": "oferta clara → proceso → límites → entregables"
+    }
+  }
+}
