@@ -12,9 +12,9 @@ export function Navbar() {
   
   const nav = [
     { href: '#services', label: t('navbar.services') },
-    { href: '#cases', label: t('navbar.cases') },
     { href: '#stack', label: t('navbar.stack') },
     { href: '#contact', label: t('navbar.contact') },
+    { href: '/metodologia-x', label: 'Metodología X' },
   ];
   
   return (
@@ -106,4 +106,3 @@ export function Navbar() {
     </header>
   );
 }
-
