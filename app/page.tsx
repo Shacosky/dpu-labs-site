@@ -4,6 +4,7 @@ import { Cases } from '@/components/Cases';
 import { Stack } from '@/components/Stack';
 import { SecurityObservability } from '@/components/SecurityObservability';
 import { Contact } from '@/components/Contact';
+import { ProjectsPreview } from '@/components/ProjectsPreview';
 
 // Cache estático: revalidar cada hora (3600s)
 export const revalidate = 3600;
@@ -16,6 +17,8 @@ export default function Page() {
       <Services />
       <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Cases />
+      <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
+      <ProjectsPreview />
       <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
       <Stack />
       <div className="my-8 sm:my-12 border-t border-white/10 w-full" />
