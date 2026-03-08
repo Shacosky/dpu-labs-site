@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'SecureShare MVP Docs — DPU Labs',
@@ -39,7 +40,13 @@ export default function SecureShareMvpDocsPage() {
   return (
     <div className="py-12 sm:py-16 space-y-14">
       <header className="max-w-4xl">
-        <p className="text-xs uppercase tracking-[0.2em] text-brand-300">Documentación técnica</p>
+        <Link
+          href="/projects/secureshare"
+          className="inline-flex items-center gap-2 rounded-md border border-white/15 px-3 py-2 text-xs font-medium uppercase tracking-[0.12em] text-neutral-200 transition hover:border-brand-400/50 hover:text-brand-200"
+        >
+          ← Volver a SecureShare
+        </Link>
+        <p className="mt-5 text-xs uppercase tracking-[0.2em] text-brand-300">Documentación técnica</p>
         <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-white">SecureShare MVP</h1>
         <p className="mt-4 text-neutral-300">
           Código base referencial, endpoints y blueprint de trazabilidad para integrar SecureShare en entorno web.

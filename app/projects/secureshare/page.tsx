@@ -49,6 +49,14 @@ export default function SecureShareProjectPage() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="https://secureshare.dpuxlabs.cl"
+            target="_blank"
+            rel="noreferrer"
+            className={ctaClasses}
+          >
+            Ver demo MVP
+          </Link>
           <Link href="/projects/secureshare/mvp-docs" className={ctaClasses}>
             Ver documentación técnica
           </Link>
