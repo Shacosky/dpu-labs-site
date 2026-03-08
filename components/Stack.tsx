@@ -134,16 +134,13 @@ const categoryColors: Record<string, string> = {
 
 export function Stack() {
   const { t } = useI18n();
-  const [expandedStacks, setExpandedStacks] = useState<Set<string>>(new Set());
+  const [expandedStacks, setExpandedStacks] = useState<Record<string, boolean>>({});
 
   const toggleStack = (stackId: string) => {
-    const newExpanded = new Set(expandedStacks);
-    if (newExpanded.has(stackId)) {
-      newExpanded.delete(stackId);
-    } else {
-      newExpanded.add(stackId);
-    }
-    setExpandedStacks(newExpanded);
+    setExpandedStacks((prev) => ({
+      ...prev,
+      [stackId]: !prev[stackId],
+    }));
   };
 
   return (
@@ -157,15 +154,18 @@ export function Stack() {
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {STACKS.map((stack) => {
-          const isExpanded = expandedStacks.has(stack.id);
+          const isExpanded = expandedStacks[stack.id] || false;
 
           return (
             <div
               key={stack.id}
-              className="rounded-lg border border-white/10 bg-white/5 transition-all duration-300 overflow-hidden"
+              className="rounded-lg border border-white/10 bg-white/5 transition-all duration-300 overflow-hidden flex flex-col h-fit"
             >
               <button
+                type="button"
                 onClick={() => toggleStack(stack.id)}
+                aria-expanded={isExpanded}
+                aria-controls={`${stack.id}-panel`}
                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-white/10 transition-colors"
               >
                 <div className="text-left">
@@ -190,7 +190,7 @@ export function Stack() {
               </button>
 
               {isExpanded && (
-                <div className="border-t border-white/10 px-6 py-6 space-y-6 animate-fadeIn">
+                <div id={`${stack.id}-panel`} className="border-t border-white/10 px-6 py-6 space-y-6">
                   {/* Technologies Grid */}
                   <div>
                     <h4 className="text-sm font-semibold text-neutral-300 mb-4 uppercase tracking-wider">
