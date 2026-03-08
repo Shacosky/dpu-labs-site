@@ -32,17 +32,22 @@ export async function POST(request: NextRequest) {
   const region = request.headers.get('x-vercel-ip-region') || '';
   const country = request.headers.get('x-vercel-ip-country') || '';
 
-  await dbConnect();
-  await VisitorLog.create({
-    path: payload.path,
-    referrer: payload.referrer || request.headers.get('referer') || '',
-    title: payload.title || '',
-    ip: getIp(request),
-    userAgent: request.headers.get('user-agent') || '',
-    city,
-    region,
-    country,
-  });
+  try {
+    await dbConnect();
+    await VisitorLog.create({
+      path: payload.path,
+      referrer: payload.referrer || request.headers.get('referer') || '',
+      title: payload.title || '',
+      ip: getIp(request),
+      userAgent: request.headers.get('user-agent') || '',
+      city,
+      region,
+      country,
+    });
+  } catch (error) {
+    console.error('[track] Failed to persist visitor log:', error);
+    return new NextResponse(null, { status: 204 });
+  }
 
   return new NextResponse(null, { status: 204 });
 }
